@@ -2,17 +2,99 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/BGLoginPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="325dp"
+        android:layout_height="536dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.298">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/LoginFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_frame">
+
+            <TextView
+                android:id="@+id/TVProjectName"
+                android:layout_width="179dp"
+                android:layout_height="141dp"
+                android:autoText="false"
+                android:background="@drawable/ic_launcher_foreground"
+                android:text="to be fill"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.097" />
+
+            <EditText
+                android:id="@+id/ETUsername"
+                android:layout_width="210dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:hint="Username"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TVProjectName" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="219dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="24dp"
+                android:text="Button"
+                app:layout_constraintEnd_toEndOf="@+id/ETPassword"
+                app:layout_constraintStart_toStartOf="@+id/ETPassword"
+                app:layout_constraintTop_toBottomOf="@+id/ETPassword" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/button"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="@+id/button"
+                app:layout_constraintTop_toBottomOf="@+id/button"
+                app:layout_constraintVertical_bias="0.36" />
+
+            <EditText
+                android:id="@+id/ETPassword"
+                android:layout_width="210dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                app:layout_constraintStart_toStartOf="@+id/ETUsername"
+                app:layout_constraintTop_toBottomOf="@+id/ETUsername" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="219dp"
+        android:layout_height="45dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.246" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
