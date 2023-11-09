@@ -4,6 +4,9 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-
-    <style name="Theme.Westudy" parent="Base.Theme.Westudy" />
+    <style name="Theme.Westudy" parent="Base.Theme.Westudy" >
+        <item name="android:statusBarColor">
+            @android:color/transparent
+        </item>
+    </style>
 </resources>
