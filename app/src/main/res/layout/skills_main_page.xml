@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:foreground="@drawable/mainpage_header"
+        android:gravity="bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/bottomAppbar"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:foreground="@drawable/mainpage_footer"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton6"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bottomAppbar"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomAppbar"
+        app:layout_constraintStart_toStartOf="@+id/bottomAppbar"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+
+    <TextView
+        android:id="@+id/textHardSkill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Hard Skills"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/appbar"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/back_icon"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/appbar"
+        app:layout_constraintEnd_toStartOf="@+id/textHardSkill"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appbar"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/textIntroHardSkill"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Welcome to our Hard Skills Training section, where you'll find a wealth of valuable resources to boost your proficiency in a wide range of practical skills.\n\nDive in, learn, and watch your hard skills soar!"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pic_cp"
+        android:layout_width="320dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/temp_announcement"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cp"
+        app:layout_constraintEnd_toEndOf="@+id/textIntroHardSkill"
+        app:layout_constraintStart_toStartOf="@+id/textIntroHardSkill"
+        app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill"
+        app:shapeAppearanceOverlay="@style/imageBorderRound"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pic_da"
+        android:layout_width="320dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/temp_announcement"
+        android:scaleType="fitCenter"
+        android:src="@drawable/da"
+        app:layout_constraintEnd_toEndOf="@+id/pic_cp"
+        app:layout_constraintStart_toStartOf="@+id/pic_cp"
+        app:layout_constraintTop_toBottomOf="@+id/pic_cp"
+        app:shapeAppearanceOverlay="@style/roundimageview"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pic_pm"
+        android:layout_width="320dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/temp_announcement"
+        android:scaleType="fitCenter"
+        android:src="@drawable/pm"
+        app:layout_constraintEnd_toEndOf="@+id/pic_da"
+        app:layout_constraintStart_toStartOf="@+id/pic_da"
+        app:layout_constraintTop_toBottomOf="@+id/pic_da"
+        app:shapeAppearanceOverlay="@style/roundimageview"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textCp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COMPUTER PROGRAMMING"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pic_cp"
+        app:layout_constraintEnd_toEndOf="@+id/pic_cp"
+        app:layout_constraintStart_toStartOf="@+id/pic_cp"
+        app:layout_constraintTop_toTopOf="@+id/pic_cp" />
+
+    <TextView
+        android:id="@+id/textDs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DATA ANALYSIS"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pic_da"
+        app:layout_constraintEnd_toEndOf="@+id/pic_da"
+        app:layout_constraintStart_toStartOf="@+id/pic_da"
+        app:layout_constraintTop_toTopOf="@+id/pic_da" />
+
+    <TextView
+        android:id="@+id/textPm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PROJECT MANAGEMENT"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pic_pm"
+        app:layout_constraintEnd_toEndOf="@+id/pic_pm"
+        app:layout_constraintStart_toStartOf="@+id/pic_pm"
+        app:layout_constraintTop_toTopOf="@+id/pic_pm" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

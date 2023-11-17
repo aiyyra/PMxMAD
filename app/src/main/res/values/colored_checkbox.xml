@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="colored_checkBox" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorAccent">#C84B31</item>
+        <item name="android:textColorSecondary">#C84B31</item>
+    </style>
+</resources>
