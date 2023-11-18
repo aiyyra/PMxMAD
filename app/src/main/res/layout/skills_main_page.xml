@@ -6,184 +6,150 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:foreground="@drawable/mainpage_header"
-        android:gravity="bottom"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="411dp"
+        android:layout_height="73dp"
+        android:background="@drawable/mainpage_header"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <RelativeLayout
-        android:id="@+id/bottomAppbar"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:foreground="@drawable/mainpage_footer"
-        android:gravity="bottom"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="56dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:src="@android:drawable/btn_star"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.138"
+            app:layout_constraintStart_toEndOf="@+id/button3"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="0dp"
+        android:layout_height="83dp"
+        android:background="@drawable/mainpage_footer"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton6"
-        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:src="@android:drawable/btn_star"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:src="@android:drawable/btn_star"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/bottomAppbar"
-        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+        <ImageButton
+            android:id="@+id/imageButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton6"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:src="@android:drawable/btn_star"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomAppbar"
-        app:layout_constraintStart_toStartOf="@+id/bottomAppbar"
-        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton8"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textHardSkill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Hard Skills"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/appbar"
-        app:layout_constraintStart_toEndOf="@+id/btnBack"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.477"
+            app:layout_constraintStart_toEndOf="@+id/imageButton7"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/back_icon"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/appbar"
-        app:layout_constraintEnd_toStartOf="@+id/textHardSkill"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appbar"
-        tools:ignore="MissingConstraints" />
-
-
-    <TextView
-        android:id="@+id/textIntroHardSkill"
-        android:layout_width="match_parent"
-        android:layout_height="111dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="Welcome to our Hard Skills Training section, where you'll find a wealth of valuable resources to boost your proficiency in a wide range of practical skills.\n\nDive in, learn, and watch your hard skills soar!"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toBottomOf="@+id/appbar"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="1.0">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/pic_cp"
-        android:layout_width="320dp"
-        android:layout_height="119dp"
-        android:layout_marginTop="20dp"
-        android:adjustViewBounds="true"
-        android:background="@drawable/temp_announcement"
-        android:scaleType="fitCenter"
-        android:src="@drawable/cp"
-        app:layout_constraintEnd_toEndOf="@+id/textIntroHardSkill"
-        app:layout_constraintStart_toStartOf="@+id/textIntroHardSkill"
-        app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill"
-        app:shapeAppearanceOverlay="@style/imageBorderRound"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="234dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/temp_announcement"
+            android:text="PM"
+            app:layout_constraintEnd_toEndOf="@+id/button5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/button5"
+            app:layout_constraintTop_toBottomOf="@+id/button5" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/pic_da"
-        android:layout_width="320dp"
-        android:layout_height="119dp"
-        android:layout_marginTop="20dp"
-        android:adjustViewBounds="true"
-        android:background="@drawable/temp_announcement"
-        android:scaleType="fitCenter"
-        android:src="@drawable/da"
-        app:layout_constraintEnd_toEndOf="@+id/pic_cp"
-        app:layout_constraintStart_toStartOf="@+id/pic_cp"
-        app:layout_constraintTop_toBottomOf="@+id/pic_cp"
-        app:shapeAppearanceOverlay="@style/roundimageview"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="234dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/temp_announcement"
+            android:text="DA"
+            app:layout_constraintEnd_toEndOf="@+id/button"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/pic_pm"
-        android:layout_width="320dp"
-        android:layout_height="119dp"
-        android:layout_marginTop="20dp"
-        android:adjustViewBounds="true"
-        android:background="@drawable/temp_announcement"
-        android:scaleType="fitCenter"
-        android:src="@drawable/pm"
-        app:layout_constraintEnd_toEndOf="@+id/pic_da"
-        app:layout_constraintStart_toStartOf="@+id/pic_da"
-        app:layout_constraintTop_toBottomOf="@+id/pic_da"
-        app:shapeAppearanceOverlay="@style/roundimageview"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/textIntroHardSkill"
+            android:layout_width="343dp"
+            android:layout_height="111dp"
+            android:layout_marginTop="16dp"
+            android:text="Welcome to our Hard Skills Training section, where you'll find a wealth of valuable resources to boost your proficiency in a wide range of practical skills.\n\nDive in, learn, and watch your hard skills soar!"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textCp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="COMPUTER PROGRAMMING"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/pic_cp"
-        app:layout_constraintEnd_toEndOf="@+id/pic_cp"
-        app:layout_constraintStart_toStartOf="@+id/pic_cp"
-        app:layout_constraintTop_toTopOf="@+id/pic_cp" />
-
-    <TextView
-        android:id="@+id/textDs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DATA ANALYSIS"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/pic_da"
-        app:layout_constraintEnd_toEndOf="@+id/pic_da"
-        app:layout_constraintStart_toStartOf="@+id/pic_da"
-        app:layout_constraintTop_toTopOf="@+id/pic_da" />
-
-    <TextView
-        android:id="@+id/textPm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PROJECT MANAGEMENT"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/pic_pm"
-        app:layout_constraintEnd_toEndOf="@+id/pic_pm"
-        app:layout_constraintStart_toStartOf="@+id/pic_pm"
-        app:layout_constraintTop_toTopOf="@+id/pic_pm" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="234dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/temp_announcement"
+            android:text="Prog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textIntroHardSkill"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="@+id/textIntroHardSkill"
+            app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill"
+            app:layout_constraintVertical_bias="0.019" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

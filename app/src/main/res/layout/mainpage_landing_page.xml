@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toTopOf="@+id/CLfooter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVHeader">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <ScrollView
             android:id="@+id/SVMainContent"
@@ -274,21 +274,6 @@
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/TVHeader"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:background="@drawable/mainpage_header"
-        android:gravity="center_vertical"
-        android:text="HI, MUHAMMAD AFIQ"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CLfooter"
         android:layout_width="411dp"
@@ -339,6 +324,30 @@
             android:layout_marginStart="35dp"
             android:src="@android:drawable/btn_star"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="412dp"
+        android:layout_height="66dp"
+        android:background="@drawable/mainpage_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/TVHeader"
+        app:layout_constraintTop_toTopOf="@+id/TVHeader">
+
+        <TextView
+            android:id="@+id/TVHeader"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:gravity="center_vertical"
+            android:text="HI, MUHAMMAD AFIQ"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

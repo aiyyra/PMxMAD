@@ -6,29 +6,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.general_login_page);
+        setContentView(R.layout.mainpage_landing_page);
 
-        Button BTNLogin = findViewById(R.id.BTNLogin);
 
-        BTNLogin.setOnClickListener(new View.OnClickListener() {
+        TextView viewSkills = findViewById(R.id.TVViewMoreSkills);
+
+        viewSkills.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                Intent intent = new Intent(MainActivity2.this, SkillsPage.class);
                 startActivity(intent);
             }
-
         });
-
-
-
-
-
 
 
     }
