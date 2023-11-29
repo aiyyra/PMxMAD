@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Skills_ProjectManagement">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="26dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/textIntroPM"
+                android:layout_width="match_parent"
+                android:layout_height="111dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="20dp"
+                android:text="Project management is crucial as a hard skill because it empowers professionals to efficiently plan, organize resources, and ensure successful project completion."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textPm1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTRODUCTION TO PROJECT MANAGEMENT"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textIntroPM"
+                app:layout_constraintTop_toBottomOf="@+id/textIntroPM" />
+
+            <WebView
+                android:id="@+id/cp_vid1"
+                android:layout_width="368dp"
+                android:layout_height="208dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textPm1" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="Mark as done"
+                android:theme="@style/colored_checkBox"
+                app:layout_constraintEnd_toEndOf="@+id/cp_vid1"
+                app:layout_constraintTop_toBottomOf="@+id/cp_vid1" />
+
+            <TextView
+                android:id="@+id/textPm2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="PROJECT LIFE CYCLE"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textPm1"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+            <WebView
+                android:id="@+id/cp_vid2"
+                android:layout_width="368dp"
+                android:layout_height="208dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textPm2" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="Mark as done"
+                android:theme="@style/colored_checkBox"
+                app:layout_constraintEnd_toEndOf="@+id/cp_vid2"
+                app:layout_constraintTop_toBottomOf="@+id/cp_vid2" />
+
+            <TextView
+                android:id="@+id/textPm3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="AGILE PROJECT MANAGEMENT"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textPm2"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+
+            <WebView
+                android:id="@+id/cp_vid3"
+                android:layout_width="368dp"
+                android:layout_height="208dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textPm3" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="Mark as done"
+                android:theme="@style/colored_checkBox"
+                app:layout_constraintEnd_toEndOf="@+id/cp_vid3"
+                app:layout_constraintTop_toBottomOf="@+id/cp_vid3" />
+
+            <TextView
+                android:id="@+id/textPm4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="WHAT IS SCRUM"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textPm3"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+
+            <WebView
+                android:id="@+id/cp_vid4"
+                android:layout_width="368dp"
+                android:layout_height="208dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textPm4" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="100dp"
+                android:text="Mark as done"
+                android:theme="@style/colored_checkBox"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/cp_vid4"
+                app:layout_constraintTop_toBottomOf="@+id/cp_vid4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:foreground="@drawable/blue_rectangle"
+        android:gravity="bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <TextView
+        android:id="@+id/textPM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Project Management"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/appbar"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/back_icon"
+        android:clickable="true"
+        android:onClick="HardSkillSection"
+        app:layout_constraintBottom_toBottomOf="@+id/appbar"
+        app:layout_constraintEnd_toStartOf="@+id/textPM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appbar"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:id="@+id/bottomAppbar"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:foreground="@drawable/blue_rectangle"
+        android:gravity="bottom"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton6"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bottomAppbar"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppbar" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/bottomAppbar"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppbar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
