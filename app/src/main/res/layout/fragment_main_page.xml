@@ -119,38 +119,80 @@
 
             </LinearLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="@color/blue">
+                android:layout_height="350dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="59dp"
-                    android:layout_height="23dp"
-                    android:text="Announcement"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:id="@+id/TVSkillsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:paddingStart="40dp"
+                    android:text="Courses"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <ImageButton
+                            android:id="@+id/imageButton16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@android:drawable/btn_star" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@android:drawable/btn_star" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@android:drawable/btn_star" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+
+            </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="350dp"
                 android:background="@color/cream">
 
                 <TextView
-                    android:layout_width="59dp"
-                    android:layout_height="23dp"
-                    android:text="Skills"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
+                    android:id="@+id/TVAnnouncementTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="40dp"
+                    android:paddingTop="30dp"
+                    android:text="Announcement"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bahagian ni nak remove okay ke, kita masukkan ke bottom bar je"
+                    app:layout_constraintStart_toStartOf="@+id/TVAnnouncementTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/TVAnnouncementTitle" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
