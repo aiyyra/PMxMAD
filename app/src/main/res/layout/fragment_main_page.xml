@@ -150,11 +150,12 @@
                             app:cardCornerRadius="12dp">
 
                             <ImageButton
-                                android:id="@+id/imageButton16"
+                                android:id="@+id/imageBtnCP"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:backgroundTint="#00FFFFFF"
+                                android:contentDescription="CPbtn"
                                 android:padding="0dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/image_cp" />
@@ -167,11 +168,12 @@
                             app:cardCornerRadius="12dp">
 
                             <ImageButton
-                                android:id="@+id/imageButton"
+                                android:id="@+id/imageBtnDA"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:backgroundTint="#00FFFFFF"
+                                android:contentDescription="DAbtn"
                                 android:padding="0dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/image_da" />
@@ -184,11 +186,12 @@
                             app:cardCornerRadius="12dp">
 
                             <ImageButton
-                                android:id="@+id/imageButton9"
+                                android:id="@+id/imageBtnPM"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:backgroundTint="#00FFFFFF"
+                                android:contentDescription="PMbtn"
                                 android:padding="0dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/image_pm" />
