@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-<!--can change to Constraint layout for less depth in layout-->
+            <!--can change to Constraint layout for less depth in layout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
@@ -31,11 +31,11 @@
                     android:id="@+id/TVCourseTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="30dp"
                     android:paddingStart="40dp"
+                    android:paddingTop="30dp"
                     android:text="Courses"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -128,11 +128,11 @@
                     android:id="@+id/TVSkillsTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="30dp"
                     android:paddingStart="40dp"
+                    android:paddingTop="30dp"
                     android:text="Skills"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <HorizontalScrollView
                     android:layout_width="wrap_content"
@@ -148,24 +148,27 @@
 
                         <ImageButton
                             android:id="@+id/imageButton16"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
                             android:layout_weight="1"
-                            android:src="@drawable/temp_announcement" />
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/image_cp" />
 
                         <ImageButton
                             android:id="@+id/imageButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
                             android:layout_weight="1"
-                            android:src="@drawable/temp_announcement" />
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/image_da" />
 
                         <ImageButton
                             android:id="@+id/imageButton9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="250dp"
+                            android:layout_height="150dp"
                             android:layout_weight="1"
-                            android:src="@drawable/temp_announcement" />
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/image_pm" />
                     </LinearLayout>
                 </HorizontalScrollView>
 
