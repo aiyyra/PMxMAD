@@ -8,6 +8,24 @@
         android:id="@id/skillsPageDest"
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="Skills"/>
-</menu>
+    <item
+        android:icon="@android:drawable/btn_default"
+        android:title="Profile"/>
+    <item
+        android:icon="@android:drawable/btn_dialog"
+        android:title="Chat"/>
+    <item
+        android:icon="@android:drawable/btn_star"
+        android:title="notification"/>
 
+    <!--    <item-->
+<!--        android:id="@id/skillsPageDest"-->
+<!--        android:icon="@android:drawable/ic_menu_info_details"-->
+<!--        android:title="Skills"/>-->
+<!--    <item-->
+<!--        android:id="@id/skillsPageDest"-->
+<!--        android:icon="@android:drawable/ic_menu_info_details"-->
+<!--        android:title="Skills"/>-->
+</menu>
+<!--change icon, add id-->
 <!--Add more items ex:- announcement, profile page, chat-->
