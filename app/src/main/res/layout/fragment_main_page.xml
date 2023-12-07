@@ -150,7 +150,9 @@
                             android:id="@+id/imageButton16"
                             android:layout_width="250dp"
                             android:layout_height="150dp"
+                            android:layout_margin="12dp"
                             android:layout_weight="1"
+                            android:backgroundTint="@color/white"
                             android:scaleType="centerCrop"
                             android:src="@drawable/image_cp" />
 
@@ -158,7 +160,9 @@
                             android:id="@+id/imageButton"
                             android:layout_width="250dp"
                             android:layout_height="150dp"
+                            android:layout_margin="12dp"
                             android:layout_weight="1"
+                            android:padding="12dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/image_da" />
 
@@ -166,6 +170,7 @@
                             android:id="@+id/imageButton9"
                             android:layout_width="250dp"
                             android:layout_height="150dp"
+                            android:layout_margin="12dp"
                             android:layout_weight="1"
                             android:scaleType="centerCrop"
                             android:src="@drawable/image_pm" />
