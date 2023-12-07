@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/mainPageDest"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Menu"/>
+    <item
+        android:id="@id/skillsPageDest"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Skills"/>
+    <item
+        android:icon="@android:drawable/btn_default"
+        android:title="Profile"/>
+    <item
+        android:icon="@android:drawable/btn_dialog"
+        android:title="Chat"/>
+    <item
+        android:icon="@android:drawable/btn_star"
+        android:title="notification"/>
+
+    <!--    <item-->
+<!--        android:id="@id/skillsPageDest"-->
+<!--        android:icon="@android:drawable/ic_menu_info_details"-->
+<!--        android:title="Skills"/>-->
+<!--    <item-->
+<!--        android:id="@id/skillsPageDest"-->
+<!--        android:icon="@android:drawable/ic_menu_info_details"-->
+<!--        android:title="Skills"/>-->
+</menu>
+<!--change icon, add id-->
+<!--Add more items ex:- announcement, profile page, chat-->

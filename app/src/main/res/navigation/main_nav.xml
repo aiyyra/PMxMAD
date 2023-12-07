@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainPageDest">
+    <fragment
+        android:id="@+id/mainPageDest"
+        android:name="com.example.westudy.MainPageFragment"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" />
+    <fragment
+        android:id="@+id/skillsPageDest"
+        android:name="com.example.westudy.SkillsPageFragment"
+        android:label="fragment_skills_page"
+        tools:layout="@layout/fragment_skills_page" />
+</navigation>
