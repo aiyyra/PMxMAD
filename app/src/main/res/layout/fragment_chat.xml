@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:context=".ChatFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+            <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:backgroundTint="@color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:id="@+id/imageView16"
+                            android:layout_width="245dp"
+                            android:layout_height="75dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="18dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView11"
+                            app:srcCompat="@drawable/rec3" />
+
+                    <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="6dp"
+                            android:text="5.53 PM"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+
+
+                    <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="186dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="187dp"
+                            android:text="Today"
+                            android:textColor="#000000"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                            android:id="@+id/imageView12"
+                            android:layout_width="245dp"
+                            android:layout_height="75dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_marginEnd="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView16"
+                            app:srcCompat="@drawable/rec2" />
+
+                    <ImageView
+                            android:id="@+id/imageView13"
+                            android:layout_width="245dp"
+                            android:layout_height="78dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="35dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView12"
+                            app:srcCompat="@drawable/rec3" />
+
+                    <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="5.53 PM"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+                    <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="6dp"
+                            android:text="5.53 PM"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+
+                    <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="212dp"
+                            android:layout_height="42dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="70dp"
+                            android:text="yo Hafiz, let study together this night"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="210dp"
+                            android:layout_height="46dp"
+                            android:layout_marginTop="176dp"
+                            android:layout_marginEnd="15dp"
+                            android:text="let’s go! but do you have any suggestion best spot to study?"
+                            android:textColor="#000000"
+                            app:layout_constraintEnd_toEndOf="@+id/imageView12"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="208dp"
+                            android:layout_height="51dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="284dp"
+                            android:text="yeah i know one spot, I heard the library near the police station is good!"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="35dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView13"
+                            app:srcCompat="@drawable/rec3" />
+
+                    <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="6dp"
+                            android:text="5.54 PM"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                    <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="410dp"
+                            android:text="do you want me to pick you up?"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dp"
+                            android:layout_marginEnd="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                            app:srcCompat="@drawable/rec2" />
+
+                    <TextView
+                            android:id="@+id/textView18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="5.54 PM"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+                    <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="196dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="15dp"
+                            android:text="yeah of course"
+                            android:textColor="#000000"
+                            app:layout_constraintEnd_toEndOf="@+id/imageView6"
+                            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintVertical_bias="0.77"/>
+                    <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="35dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                            app:srcCompat="@drawable/rec3" />
+
+                    <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="6dp"
+                            android:text="5.55 PM"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+                    <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="178dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="620dp"
+                            android:text="okay"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+</ScrollView>
