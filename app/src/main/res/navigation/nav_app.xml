@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_app"
+            app:startDestination="@id/DestHome">
+
+    <fragment android:id="@+id/DestHome" android:name="com.example.weducation.HomeFragment"
+              android:label="Home" tools:layout="@layout/fragment_home"/>
+    <fragment android:id="@+id/DestChat" android:name="com.example.weducation.ChatFragment"
+              android:label="Chat" tools:layout="@layout/fragment_chat"/>
+    <fragment android:id="@+id/DestProfile" android:name="com.example.weducation.UserProfileFragment"
+              android:label="User Profile" tools:layout="@layout/fragment_user_profile"/>
+    <fragment android:id="@+id/DestNotification" android:name="com.example.weducation.NotificationFragment"
+              android:label="Notification" tools:layout="@layout/fragment_notification"/>
+    <fragment android:id="@+id/DestSettings" android:name="com.example.weducation.SettingsFragment"
+              android:label="Settings" tools:layout="@layout/fragment_settings"/>
+    <fragment android:id="@+id/DestSkill" android:name="com.example.weducation.HardSkillMainFragment"
+              android:label="Hard Skills" tools:layout="@layout/fragment_hard_skill_main"/>
+    <fragment android:id="@+id/DestAnnouncement" android:name="com.example.weducation.AnnouncementFragment"
+              android:label="Announcement" tools:layout="@layout/fragment_announcement"/>
+    <fragment android:id="@+id/DestCourse" android:name="com.example.weducation.CourseFragment"
+              android:label="Courses" tools:layout="@layout/fragment_course"/>
+    <fragment android:id="@+id/DestSkillCompProgramming" android:name="com.example.weducation.SkillCompProgrammingFragment"
+              android:label="Computer Programming" tools:layout="@layout/fragment_skill_comp_programming"/>
+    <fragment android:id="@+id/DestSkillDataAnalyst" android:name="com.example.weducation.SkillDataAnalystFragment"
+              android:label="Data Analysis" tools:layout="@layout/fragment_skill_data_analyst"/>
+    <fragment android:id="@+id/DestSkillProjectManagement" android:name="com.example.weducation.SkillProjectManagementFragment"
+              android:label="Project Management" tools:layout="@layout/fragment_skill_project_management"/>
+    <fragment android:id="@+id/DestChemistry" android:name="com.example.weducation.ChemistryFragment"
+              android:label="Chemistry" tools:layout="@layout/fragment_chemistry"/>
+    <fragment android:id="@+id/DestEnglish" android:name="com.example.weducation.EnglishFragment"
+              android:label="English" tools:layout="@layout/fragment_english"/>
+    <fragment android:id="@+id/DestGeography" android:name="com.example.weducation.GeographyFragment"
+              android:label="Geography" tools:layout="@layout/fragment_geography"/>
+    <fragment android:id="@+id/DestPhysics" android:name="com.example.weducation.PhysicsFragment"
+              android:label="Physics" tools:layout="@layout/fragment_physics"/>
+    <fragment android:id="@+id/DestMaths" android:name="com.example.weducation.MathsFragment"
+              android:label="Maths" tools:layout="@layout/fragment_maths"/>
+    <fragment android:id="@+id/DestBiology" android:name="com.example.weducation.BiologyFragment"
+              android:label="Biology" tools:layout="@layout/fragment_biology"/>
+</navigation>
