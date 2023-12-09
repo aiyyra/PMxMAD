@@ -19,4 +19,14 @@
         android:name="com.example.westudy.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/chatPageDest"
+        android:name="com.example.westudy.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/notificationPageDest"
+        android:name="com.example.westudy.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>
