@@ -9,6 +9,7 @@
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="Skills"/>
     <item
+        android:id="@id/profilePageDest"
         android:icon="@android:drawable/btn_default"
         android:title="Profile"/>
     <item

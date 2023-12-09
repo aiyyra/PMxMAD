@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "941431198601",
+    "project_id": "westudy-82eb2",
+    "storage_bucket": "westudy-82eb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941431198601:android:5631d143a853e8b043c758",
+        "android_client_info": {
+          "package_name": "com.example.westudy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeleKq1yidD5xL4Tr8UP8-wufZoXdnjOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

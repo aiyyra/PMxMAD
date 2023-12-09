@@ -13,8 +13,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainPage extends AppCompatActivity {
+
+
+//    Take a button; FirebaseAuth.getInstance().signOut(); Intent to login page; finish activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
