@@ -2,23 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@id/mainPageDest"
-        android:icon="@android:drawable/ic_menu_agenda"
+        android:icon="@drawable/menu_home"
         android:title="Menu"/>
     <item
         android:id="@id/chatPageDest"
-        android:icon="@android:drawable/btn_dialog"
+        android:icon="@drawable/menu_chat"
         android:title="Chat"/>
     <item
         android:id="@id/profilePageDest"
-        android:icon="@android:drawable/btn_default"
+        android:icon="@drawable/menu_profile"
         android:title="Profile"/>
     <item
         android:id="@id/notificationPageDest"
-        android:icon="@android:drawable/btn_star"
+        android:icon="@drawable/menu_notification"
         android:title="notification"/>
     <item
         android:id="@id/skillsPageDest"
-        android:icon="@android:drawable/ic_menu_info_details"
+        android:icon="@drawable/menu_settings"
         android:title="Skills"/>
 <!--    we may remove the skills page option in menu-->
 </menu>
