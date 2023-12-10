@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -39,14 +39,14 @@
                 app:layout_constraintVertical_bias="0.194" />
 
             <EditText
-                android:id="@+id/ETUsername"
+                android:id="@+id/ETEmail"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="225dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="44dp"
                 android:background="@drawable/button_layout"
                 android:ems="10"
-                android:hint="Username"
+                android:hint="Email"
                 android:inputType="text"
                 android:paddingStart="20dp"
                 android:textColorHint="#ECDBBA"
@@ -54,6 +54,13 @@
                 app:layout_constraintEnd_toEndOf="@+id/TVProjectName"
                 app:layout_constraintStart_toStartOf="@+id/TVProjectName"
                 app:layout_constraintTop_toBottomOf="@+id/TVProjectName" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/BTNLogin"
@@ -93,15 +100,15 @@
                 android:paddingStart="20dp"
                 android:textColorHint="#ECDBBA"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/ETUsername"
-                app:layout_constraintStart_toStartOf="@+id/ETUsername"
-                app:layout_constraintTop_toBottomOf="@+id/ETUsername" />
+                app:layout_constraintEnd_toEndOf="@+id/ETEmail"
+                app:layout_constraintStart_toStartOf="@+id/ETEmail"
+                app:layout_constraintTop_toBottomOf="@+id/ETEmail" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 
     <Button
-        android:id="@+id/BTNNewAcc"
+        android:id="@+id/BtnClickRegister"
         android:layout_width="220dp"
         android:layout_height="45dp"
         android:backgroundTint="#ECDBBA"
