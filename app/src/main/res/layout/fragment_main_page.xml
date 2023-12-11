@@ -43,77 +43,92 @@
                     android:paddingBottom="20dp">
 
                     <ImageButton
-                        android:id="@+id/imageButton10"
+                        android:id="@+id/iBtnEng"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/imageButton11"
+                        android:background="@android:color/transparent"
+                        android:padding="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_subject_eng"
+                        app:layout_constraintBottom_toTopOf="@+id/iBtnMath"
                         app:layout_constraintEnd_toStartOf="@+id/imageButton13"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/imageButton12"
+                        app:layout_constraintStart_toEndOf="@+id/iBtnChem"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_chainStyle="packed"
-                        tools:src="@tools:sample/avatars" />
+                        app:layout_constraintVertical_chainStyle="packed" />
 
                     <ImageButton
-                        android:id="@+id/imageButton11"
+                        android:id="@+id/iBtnMath"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="8dp"
+                        android:background="@android:color/transparent"
+                        android:padding="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_subject_math"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/imageButton15"
+                        app:layout_constraintEnd_toStartOf="@+id/iBtnBio"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/imageButton14"
-                        app:layout_constraintTop_toBottomOf="@+id/imageButton10"
-                        tools:src="@tools:sample/avatars" />
+                        app:layout_constraintStart_toEndOf="@+id/iBtnPhy"
+                        app:layout_constraintTop_toBottomOf="@+id/iBtnEng" />
 
                     <ImageButton
-                        android:id="@+id/imageButton12"
+                        android:id="@+id/iBtnChem"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="8dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageButton10"
-                        app:layout_constraintEnd_toStartOf="@+id/imageButton10"
+                        android:background="@android:color/transparent"
+                        android:padding="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_subject_chem"
+                        app:layout_constraintBottom_toBottomOf="@+id/iBtnEng"
+                        app:layout_constraintEnd_toStartOf="@+id/iBtnEng"
                         app:layout_constraintHorizontal_chainStyle="packed"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/imageButton10"
-                        tools:src="@tools:sample/avatars" />
+                        app:layout_constraintTop_toTopOf="@+id/iBtnEng" />
 
                     <ImageButton
                         android:id="@+id/imageButton13"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="8dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageButton10"
+                        app:layout_constraintBottom_toBottomOf="@+id/iBtnEng"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imageButton10"
-                        app:layout_constraintTop_toTopOf="@+id/imageButton10"
+                        app:layout_constraintStart_toEndOf="@+id/iBtnEng"
+                        app:layout_constraintTop_toTopOf="@+id/iBtnEng"
                         tools:src="@tools:sample/avatars" />
 
                     <ImageButton
-                        android:id="@+id/imageButton14"
+                        android:id="@+id/iBtnPhy"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="8dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageButton11"
-                        app:layout_constraintEnd_toStartOf="@+id/imageButton11"
+                        android:background="@android:color/transparent"
+                        android:padding="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_subject_physics"
+                        app:layout_constraintBottom_toBottomOf="@+id/iBtnMath"
+                        app:layout_constraintEnd_toStartOf="@+id/iBtnMath"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintHorizontal_chainStyle="packed"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/imageButton11"
-                        tools:src="@tools:sample/avatars" />
+                        app:layout_constraintTop_toTopOf="@+id/iBtnMath" />
 
                     <ImageButton
-                        android:id="@+id/imageButton15"
+                        android:id="@+id/iBtnBio"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_margin="8dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageButton11"
+                        android:background="@android:color/transparent"
+                        android:padding="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_subject_bio"
+                        app:layout_constraintBottom_toBottomOf="@+id/iBtnMath"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/imageButton11"
-                        app:layout_constraintTop_toTopOf="@+id/imageButton11"
-                        tools:src="@tools:sample/avatars" />
+                        app:layout_constraintStart_toEndOf="@+id/iBtnMath"
+                        app:layout_constraintTop_toTopOf="@+id/iBtnMath" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 

@@ -8,7 +8,23 @@
         android:id="@+id/mainPageDest"
         android:name="com.example.westudy.MainPageFragment"
         android:label="fragment_main_page"
-        tools:layout="@layout/fragment_main_page" />
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/action_mainPage_to_chemPage"
+            app:destination="@id/chemPageDest" />
+        <action
+            android:id="@+id/action_mainPage_to_engPage"
+            app:destination="@id/engPageDest" />
+        <action
+            android:id="@+id/action_mainPage_to_phyPage"
+            app:destination="@id/phyPageDest" />
+        <action
+            android:id="@+id/action_mainPage_to_mathPage"
+            app:destination="@id/mathPageDest" />
+        <action
+            android:id="@+id/action_mainPage_to_bioPage"
+            app:destination="@id/bioPageDest" />
+    </fragment>
     <fragment
         android:id="@+id/skillsPageDest"
         android:name="com.example.westudy.SkillsPageFragment"
@@ -29,4 +45,29 @@
         android:name="com.example.westudy.NotificationFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/chemPageDest"
+        android:name="com.example.westudy.ChemistryFragment"
+        android:label="fragment_chemistry"
+        tools:layout="@layout/fragment_chemistry" />
+    <fragment
+        android:id="@+id/engPageDest"
+        android:name="com.example.westudy.EnglishFragment"
+        android:label="fragment_english"
+        tools:layout="@layout/fragment_english" />
+    <fragment
+        android:id="@+id/phyPageDest"
+        android:name="com.example.westudy.PhysicsFragment"
+        android:label="fragment_physics"
+        tools:layout="@layout/fragment_physics" />
+    <fragment
+        android:id="@+id/mathPageDest"
+        android:name="com.example.westudy.MathsFragment"
+        android:label="fragment_maths"
+        tools:layout="@layout/fragment_maths" />
+    <fragment
+        android:id="@+id/bioPageDest"
+        android:name="com.example.westudy.BiologyFragment"
+        android:label="fragment_biology"
+        tools:layout="@layout/fragment_biology" />
 </navigation>
