@@ -134,7 +134,60 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="50dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TVAnnouncementTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="40dp"
+                    android:paddingTop="30dp"
+                    android:text="Announcement"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <ImageButton
+                            android:id="@+id/imageButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/temp_announcement" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/temp_announcement" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/temp_announcement" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="80dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -216,56 +269,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/TVAnnouncementTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="40dp"
-                    android:paddingTop="30dp"
-                    android:text="Announcement"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-
-                        <ImageButton
-                            android:id="@+id/imageButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/temp_announcement" />
-
-                        <ImageButton
-                            android:id="@+id/imageButton3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/temp_announcement" />
-
-                        <ImageButton
-                            android:id="@+id/imageButton4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/temp_announcement" />
-                    </LinearLayout>
-                </HorizontalScrollView>
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
