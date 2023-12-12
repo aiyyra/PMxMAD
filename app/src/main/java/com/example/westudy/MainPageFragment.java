@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,6 +66,7 @@ public class MainPageFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_main_page, container, false);
     }
 
+    TextView TVSkillsTitle;
     ImageButton iBtnChem,iBtnEng,iBtnPhy,iBtnMath,iBtnBio;
     ImageButton iBtnCP,iBtnDA,iBtnPM;
     @Override
@@ -84,6 +86,7 @@ public class MainPageFragment extends Fragment {
         iBtnBio = view.findViewById(R.id.iBtnBio);
         ///////////////////////
         ///////////////////////
+        TVSkillsTitle = view.findViewById(R.id.TVSkillsTitle);
         iBtnCP = view.findViewById(R.id.iBtnCP);
         iBtnDA = view.findViewById(R.id.iBtnDA);
         iBtnPM = view.findViewById(R.id.iBtnPM);
@@ -122,7 +125,13 @@ public class MainPageFragment extends Fragment {
             }
         });
         ///////////////////////
-        ///////////////////////
+        ///////////////////////Skills Section//////////////////////
+        TVSkillsTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_skillsPage);
+            }
+        });
         iBtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

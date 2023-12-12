@@ -98,4 +98,9 @@
         android:name="com.example.westudy.skills_PM_Fragment"
         android:label="fragment_skills__p_m_"
         tools:layout="@layout/fragment_skills__p_m_" />
+    <fragment
+        android:id="@+id/settingPageDest"
+        android:name="com.example.westudy.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>
