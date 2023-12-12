@@ -17,9 +17,9 @@
         android:icon="@drawable/menu_notification"
         android:title="notification"/>
     <item
-        android:id="@id/skillsPageDest"
+        android:id="@id/settingPageDest"
         android:icon="@drawable/menu_settings"
-        android:title="Skills"/>
+        android:title="Settings"/>
 <!--    we may remove the skills page option in menu-->
 </menu>
 <!--change icon, add id-->

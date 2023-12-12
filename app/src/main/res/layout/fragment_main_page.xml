@@ -218,7 +218,7 @@
                             app:cardCornerRadius="12dp">
 
                             <ImageButton
-                                android:id="@+id/imageBtnCP"
+                                android:id="@+id/iBtnCP"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -236,7 +236,7 @@
                             app:cardCornerRadius="12dp">
 
                             <ImageButton
-                                android:id="@+id/imageBtnDA"
+                                android:id="@+id/iBtnDA"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -254,7 +254,7 @@
                             app:cardCornerRadius="12dp">
 
                             <ImageButton
-                                android:id="@+id/imageBtnPM"
+                                android:id="@+id/iBtnPM"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
