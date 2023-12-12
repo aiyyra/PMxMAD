@@ -24,12 +24,25 @@
         <action
             android:id="@+id/action_mainPage_to_bioPage"
             app:destination="@id/bioPageDest" />
+        <action
+            android:id="@+id/action_mainPage_to_skillsPage"
+            app:destination="@id/skillsPageDest" />
     </fragment>
     <fragment
         android:id="@+id/skillsPageDest"
         android:name="com.example.westudy.SkillsPageFragment"
         android:label="fragment_skills_page"
-        tools:layout="@layout/fragment_skills_page" />
+        tools:layout="@layout/fragment_skills_page" >
+        <action
+            android:id="@+id/action_skillsPage_to_CPPage"
+            app:destination="@id/CPPageDest" />
+        <action
+            android:id="@+id/action_skillsPage_to_DAPage"
+            app:destination="@id/DAPageDest" />
+        <action
+            android:id="@+id/action_skillsPage_to_PMPage"
+            app:destination="@id/PMPageDest" />
+    </fragment>
     <fragment
         android:id="@+id/profilePageDest"
         android:name="com.example.westudy.ProfileFragment"
@@ -70,4 +83,19 @@
         android:name="com.example.westudy.BiologyFragment"
         android:label="fragment_biology"
         tools:layout="@layout/fragment_biology" />
+    <fragment
+        android:id="@+id/CPPageDest"
+        android:name="com.example.westudy.skills_CP_Fragment"
+        android:label="fragment_skills__c_m_"
+        tools:layout="@layout/fragment_skills__c_p_" />
+    <fragment
+        android:id="@+id/DAPageDest"
+        android:name="com.example.westudy.skills_DA_Fragment"
+        android:label="fragment_skills__d_a_"
+        tools:layout="@layout/fragment_skills__d_a_" />
+    <fragment
+        android:id="@+id/PMPageDest"
+        android:name="com.example.westudy.skills_PM_Fragment"
+        android:label="fragment_skills__p_m_"
+        tools:layout="@layout/fragment_skills__p_m_" />
 </navigation>
