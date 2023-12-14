@@ -29,13 +29,18 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:scaleType="centerInside"
             android:src="@drawable/ic_launcher_foreground" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="TextView" />
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Name" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,13 +55,19 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_launcher_foreground"
+            app:srcCompat="@android:drawable/stat_sys_phone_call" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="TextView" />
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Phone no" />
     </LinearLayout>
 
     <LinearLayout
@@ -71,13 +82,19 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_launcher_foreground"
+            app:srcCompat="@android:drawable/ic_dialog_email" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="TextView" />
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Email" />
     </LinearLayout>
 
     <Button
