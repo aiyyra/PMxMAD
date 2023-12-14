@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/mainPageDest"
         android:name="com.example.westudy.MainPageFragment"
-        android:label="fragment_main_page"
+        android:label="Home"
         tools:layout="@layout/fragment_main_page" >
         <action
             android:id="@+id/action_mainPage_to_chemPage"
@@ -31,7 +31,7 @@
     <fragment
         android:id="@+id/skillsPageDest"
         android:name="com.example.westudy.SkillsPageFragment"
-        android:label="fragment_skills_page"
+        android:label="Skills"
         tools:layout="@layout/fragment_skills_page" >
         <action
             android:id="@+id/action_skillsPage_to_CPPage"
@@ -46,61 +46,61 @@
     <fragment
         android:id="@+id/profilePageDest"
         android:name="com.example.westudy.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/chatPageDest"
         android:name="com.example.westudy.ChatFragment"
-        android:label="fragment_chat"
+        android:label="Chat"
         tools:layout="@layout/fragment_chat" />
     <fragment
         android:id="@+id/notificationPageDest"
         android:name="com.example.westudy.NotificationFragment"
-        android:label="fragment_notification"
+        android:label="Notification"
         tools:layout="@layout/fragment_notification" />
     <fragment
         android:id="@+id/chemPageDest"
         android:name="com.example.westudy.ChemistryFragment"
-        android:label="fragment_chemistry"
+        android:label="Chemistry"
         tools:layout="@layout/fragment_chemistry" />
     <fragment
         android:id="@+id/engPageDest"
         android:name="com.example.westudy.EnglishFragment"
-        android:label="fragment_english"
+        android:label="English"
         tools:layout="@layout/fragment_english" />
     <fragment
         android:id="@+id/phyPageDest"
         android:name="com.example.westudy.PhysicsFragment"
-        android:label="fragment_physics"
+        android:label="Physics"
         tools:layout="@layout/fragment_physics" />
     <fragment
         android:id="@+id/mathPageDest"
         android:name="com.example.westudy.MathsFragment"
-        android:label="fragment_maths"
+        android:label="Maths"
         tools:layout="@layout/fragment_maths" />
     <fragment
         android:id="@+id/bioPageDest"
         android:name="com.example.westudy.BiologyFragment"
-        android:label="fragment_biology"
+        android:label="Biology"
         tools:layout="@layout/fragment_biology" />
     <fragment
         android:id="@+id/CPPageDest"
         android:name="com.example.westudy.skills_CP_Fragment"
-        android:label="fragment_skills__c_m_"
+        android:label="Computer Programming"
         tools:layout="@layout/fragment_skills__c_p_" />
     <fragment
         android:id="@+id/DAPageDest"
         android:name="com.example.westudy.skills_DA_Fragment"
-        android:label="fragment_skills__d_a_"
+        android:label="Data Analysis"
         tools:layout="@layout/fragment_skills__d_a_" />
     <fragment
         android:id="@+id/PMPageDest"
         android:name="com.example.westudy.skills_PM_Fragment"
-        android:label="fragment_skills__p_m_"
+        android:label="Project Management"
         tools:layout="@layout/fragment_skills__p_m_" />
     <fragment
         android:id="@+id/settingPageDest"
         android:name="com.example.westudy.SettingFragment"
-        android:label="fragment_setting"
+        android:label="Setting"
         tools:layout="@layout/fragment_setting" />
 </navigation>
