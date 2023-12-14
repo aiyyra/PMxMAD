@@ -1,193 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainPageFragment">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorOnPrimary"
+    tools:context=".MainPage">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:backgroundTint="?attr/colorOnPrimary">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/TVCourseTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="40dp"
-                android:paddingTop="30dp"
-                android:text="Courses"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <HorizontalScrollView
+                android:id="@+id/containerAnnouncement"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="10dp">
-
-                <ImageButton
-                    android:id="@+id/iBtnEng"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="8dp"
-                    android:background="@android:color/transparent"
-                    android:padding="25dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image_subject_eng"
-                    app:layout_constraintBottom_toTopOf="@+id/iBtnMath"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton13"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/iBtnChem"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_chainStyle="packed" />
-
-                <ImageButton
-                    android:id="@+id/iBtnMath"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="8dp"
-                    android:background="@android:color/transparent"
-                    android:padding="25dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image_subject_math"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/iBtnBio"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/iBtnPhy"
-                    app:layout_constraintTop_toBottomOf="@+id/iBtnEng" />
-
-                <ImageButton
-                    android:id="@+id/iBtnChem"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="8dp"
-                    android:background="@android:color/transparent"
-                    android:padding="25dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image_subject_chem"
-                    app:layout_constraintBottom_toBottomOf="@+id/iBtnEng"
-                    app:layout_constraintEnd_toStartOf="@+id/iBtnEng"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/iBtnEng" />
-
-                <ImageButton
-                    android:id="@+id/imageButton13"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/iBtnEng"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/iBtnEng"
-                    app:layout_constraintTop_toTopOf="@+id/iBtnEng"
-                    tools:src="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/iBtnPhy"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="8dp"
-                    android:background="@android:color/transparent"
-                    android:padding="25dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image_subject_physics"
-                    app:layout_constraintBottom_toBottomOf="@+id/iBtnMath"
-                    app:layout_constraintEnd_toStartOf="@+id/iBtnMath"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/iBtnMath" />
-
-                <ImageButton
-                    android:id="@+id/iBtnBio"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="8dp"
-                    android:background="@android:color/transparent"
-                    android:padding="25dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image_subject_bio"
-                    app:layout_constraintBottom_toBottomOf="@+id/iBtnMath"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/iBtnMath"
-                    app:layout_constraintTop_toTopOf="@+id/iBtnMath" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/TVAnnouncementTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="40dp"
-                android:paddingTop="30dp"
-                android:text="Announcement"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-
-                    <ImageButton
-                        android:id="@+id/imageButton2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/temp_announcement" />
-
-                    <ImageButton
-                        android:id="@+id/imageButton3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/temp_announcement" />
-
-                    <ImageButton
-                        android:id="@+id/imageButton4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@drawable/temp_announcement" />
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <TextView
-                android:id="@+id/TVSkillsTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="40dp"
-                android:paddingTop="30dp"
-                android:text="Skills"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/containerHardSkill"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/announcement"
+                app:layout_constraintVertical_bias="0.142">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="12dp"
+                        app:cardCornerRadius="12dp">
+
+                        <ImageButton
+                            android:id="@+id/btnAnnounce1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150sp"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:backgroundTint="?attr/colorOnPrimary"
+                            android:padding="0dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/image_pm"
+                            tools:ignore="ContentDescription" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="12dp"
+                        app:cardCornerRadius="12dp">
+
+                        <ImageButton
+                            android:id="@+id/btnAnnounce2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150sp"
+                            android:layout_weight="1"
+                            android:padding="0dp"
+                            android:adjustViewBounds="true"
+                            android:backgroundTint="?attr/colorOnPrimary"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/image_da"
+                            tools:ignore="ContentDescription" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="12dp"
+                        app:cardCornerRadius="12dp">
+
+                        <ImageButton
+                            android:id="@+id/btnAnnounce3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150sp"
+                            android:layout_weight="1"
+                            android:padding="0dp"
+                            android:adjustViewBounds="true"
+                            android:backgroundTint="?attr/colorOnPrimary"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/image_cp"
+                            tools:ignore="ContentDescription" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:id="@+id/containerHardSkill"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hardskill">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
@@ -198,14 +113,15 @@
 
                         <ImageButton
                             android:id="@+id/iBtnCP"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150sp"
                             android:layout_weight="1"
-                            android:backgroundTint="#00FFFFFF"
-                            android:contentDescription="CPbtn"
+                            android:adjustViewBounds="true"
+                            android:backgroundTint="?attr/colorOnPrimary"
                             android:padding="0dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/image_cp" />
+                            app:srcCompat="@drawable/image_cp"
+                            tools:ignore="ContentDescription" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -216,14 +132,15 @@
 
                         <ImageButton
                             android:id="@+id/iBtnDA"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150sp"
                             android:layout_weight="1"
-                            android:backgroundTint="#00FFFFFF"
-                            android:contentDescription="DAbtn"
+                            android:adjustViewBounds="true"
+                            android:backgroundTint="?attr/colorOnPrimary"
                             android:padding="0dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/image_da" />
+                            app:srcCompat="@drawable/image_da"
+                            tools:ignore="ContentDescription" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -234,18 +151,305 @@
 
                         <ImageButton
                             android:id="@+id/iBtnPM"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150sp"
                             android:layout_weight="1"
-                            android:backgroundTint="#00FFFFFF"
-                            android:contentDescription="PMbtn"
+                            android:adjustViewBounds="true"
+                            android:backgroundTint="?attr/colorOnPrimary"
                             android:padding="0dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/image_pm" />
+                            app:srcCompat="@drawable/image_pm"
+                            tools:ignore="ContentDescription" />
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
             </HorizontalScrollView>
 
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="My Course"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.052"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/announcement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="260dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Announcement"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.062"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/course" />
+
+            <TextView
+                android:id="@+id/hardskill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="208dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Skills"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.044"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/announcement" />
+
+            <Button
+                android:id="@+id/btnViewCourse"
+                android:layout_width="93dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:fontFamily="@font/inter_medium"
+                android:paddingLeft="3sp"
+                android:paddingTop="3sp"
+                android:paddingRight="3sp"
+                android:paddingBottom="3sp"
+                android:text="View All"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.984"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnViewSkill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="192dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/inter_medium"
+                android:paddingLeft="3sp"
+                android:paddingTop="3sp"
+                android:paddingRight="3sp"
+                android:paddingBottom="3sp"
+                android:text="View All"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.984"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnViewAnnouncement" />
+
+            <Button
+                android:id="@+id/btnViewAnnouncement"
+                android:layout_width="84dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="252dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/inter_medium"
+                android:paddingLeft="3sp"
+                android:paddingTop="3sp"
+                android:paddingRight="3sp"
+                android:paddingBottom="3sp"
+                android:text="View All"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.972"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnViewCourse" />
+
+            <ImageButton
+                android:id="@+id/iBtnChem"
+                android:layout_width="103dp"
+                android:layout_height="107dp"
+                android:layout_marginTop="52dp"
+                android:backgroundTint="@color/white"
+                android:paddingLeft="3sp"
+                android:paddingTop="3sp"
+                android:paddingRight="3sp"
+                android:paddingBottom="3sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.136"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/image_subject_chem"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/iBtnBio"
+                android:layout_width="107dp"
+                android:layout_height="116dp"
+                android:layout_marginTop="172dp"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:paddingLeft="3sp"
+                android:paddingTop="3sp"
+                android:paddingRight="3sp"
+                android:paddingBottom="3sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.888"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/image_subject_bio"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/iBtnMath"
+                android:layout_width="101dp"
+                android:layout_height="111dp"
+                android:layout_marginTop="172dp"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:paddingLeft="3sp"
+                android:paddingTop="3sp"
+                android:paddingRight="3sp"
+                android:paddingBottom="3sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/image_subject_math"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/iBtnPhy"
+                android:layout_width="102dp"
+                android:layout_height="111dp"
+                android:layout_marginTop="172dp"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:paddingLeft="3sp"
+                android:paddingTop="3sp"
+                android:paddingRight="3sp"
+                android:paddingBottom="3sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.139"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/image_subject_physics"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/iBtnGeo"
+                android:layout_width="103dp"
+                android:layout_height="106dp"
+                android:layout_marginTop="52dp"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:paddingLeft="3sp"
+                android:paddingTop="3sp"
+                android:paddingRight="3sp"
+                android:paddingBottom="3sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.886"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/image_subject_geo"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/iBtnEng"
+                android:layout_width="103dp"
+                android:layout_height="106dp"
+                android:layout_marginTop="52dp"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:paddingLeft="3sp"
+                android:paddingTop="3sp"
+                android:paddingRight="3sp"
+                android:paddingBottom="3sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/image_subject_eng"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/textChem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="136dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Chemistry"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.165"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textEng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="132dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="English"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textGeo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="132dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Geography"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.871"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textPhysics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="260dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Physics"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.181"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textMaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="260dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Maths"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textBio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="260dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Biology"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.842"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>
