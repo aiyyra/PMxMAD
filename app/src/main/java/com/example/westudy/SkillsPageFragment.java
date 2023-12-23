@@ -1,5 +1,6 @@
 package com.example.westudy;
 
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,52 +13,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SkillsPageFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.material.imageview.ShapeableImageView;
+
+
 public class SkillsPageFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public SkillsPageFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SkillsPageFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SkillsPageFragment newInstance(String param1, String param2) {
-        SkillsPageFragment fragment = new SkillsPageFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,7 +32,7 @@ public class SkillsPageFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_skills_page, container, false);
     }
 
-    ImageButton iBtnCP,iBtnDA,iBtnPM;
+    ShapeableImageView iBtnCP,iBtnDA,iBtnPM;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -76,9 +42,9 @@ public class SkillsPageFragment extends Fragment {
     }
 
     public void initializeView(View view){
-        iBtnCP = view.findViewById(R.id.iBtnCP);
-        iBtnDA = view.findViewById(R.id.iBtnDA);
-        iBtnPM = view.findViewById(R.id.iBtnPM);
+        iBtnCP = view.findViewById(R.id.roundRectangle);
+        iBtnDA = view.findViewById(R.id.roundRectangle2);
+        iBtnPM = view.findViewById(R.id.roundRectangle3);
     }
 
     public void setBtnAction(View view){

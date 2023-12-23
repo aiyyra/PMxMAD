@@ -69,6 +69,7 @@ public class MainPageFragment extends Fragment {
     TextView TVSkillsTitle;
     ImageButton iBtnChem,iBtnEng,iBtnPhy,iBtnMath,iBtnBio;
     ImageButton iBtnCP,iBtnDA,iBtnPM;
+    TextView viewAllSkills;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -90,6 +91,7 @@ public class MainPageFragment extends Fragment {
         iBtnCP = view.findViewById(R.id.iBtnCP);
         iBtnDA = view.findViewById(R.id.iBtnDA);
         iBtnPM = view.findViewById(R.id.iBtnPM);
+        viewAllSkills = view.findViewById(R.id.viewAllSkills);
     }
 
     public void setBtnAction(View view){
@@ -132,6 +134,7 @@ public class MainPageFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_mainPage_to_skillsPage);
             }
         });
+
         iBtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

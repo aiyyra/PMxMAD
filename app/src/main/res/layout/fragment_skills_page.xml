@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SkillsPage">
+    tools:context=".SkillsPageFragment">
 
 
 
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textIntroHardSkill"
         app:layout_constraintStart_toStartOf="@+id/textIntroHardSkill"
         app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -45,7 +45,7 @@
         android:src="@drawable/da"
         app:layout_constraintEnd_toEndOf="@+id/pic_cp"
         app:layout_constraintTop_toBottomOf="@+id/pic_cp"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -58,7 +58,7 @@
         android:src="@drawable/pm"
         app:layout_constraintEnd_toEndOf="@+id/pic_da"
         app:layout_constraintTop_toBottomOf="@+id/pic_da"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textIntroHardSkill"
         app:layout_constraintStart_toStartOf="@+id/textIntroHardSkill"
         app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -98,7 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pic_cp"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -117,7 +117,7 @@
         android:src="@drawable/red_rectangle"
         app:layout_constraintEnd_toEndOf="@+id/pic_da"
         app:layout_constraintTop_toBottomOf="@+id/pic_da"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <TextView
