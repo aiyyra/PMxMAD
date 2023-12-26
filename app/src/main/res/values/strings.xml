@@ -1,5 +1,28 @@
 <resources>
     <string name="app_name">Westudy</string>
+    <string name="hint_word">Note…</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Note not saved because it is empty.</string>
+    <string name="_2_30_pm">2.30 PM</string>
+    <string name="_2_00_pm">2.00 PM</string>
+    <string name="_12_30_pm">12.30 PM</string>
+    <string name="_12_00_pm">12.00 PM</string>
+    <string name="_11_30_am">11.30 AM</string>
+    <string name="_11_00_am">11.00 AM</string>
+    <string name="chemistry">Chemistry</string>
+    <string name="english">English</string>
+    <string name="geography">Geography</string>
+    <string name="physics">Physics</string>
+    <string name="maths">Maths</string>
+    <string name="biology">Biology</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="teachers_all">
+        <item>Cikgu Azmi</item>
+        <item>Cikgu Aiman</item>
+        <item>Cikgu Arif</item>
+        <item>Cikgu Danial</item>
+        <item>Cikgu Amir</item>
+        <item>Cikgu Iman</item>
+    </string-array>
 </resources>
