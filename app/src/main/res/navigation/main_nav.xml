@@ -42,6 +42,7 @@
         <action
             android:id="@+id/action_skillsPage_to_PMPage"
             app:destination="@id/PMPageDest" />
+
     </fragment>
     <fragment
         android:id="@+id/profilePageDest"
@@ -87,7 +88,9 @@
         android:id="@+id/CPPageDest"
         android:name="com.example.westudy.skills_CP_Fragment"
         android:label="Computer Programming"
-        tools:layout="@layout/fragment_skills__c_p_" />
+        tools:layout="@layout/fragment_skills__c_p_" >
+
+    </fragment>
     <fragment
         android:id="@+id/DAPageDest"
         android:name="com.example.westudy.skills_DA_Fragment"

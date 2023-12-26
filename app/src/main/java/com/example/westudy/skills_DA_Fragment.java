@@ -1,7 +1,10 @@
 package com.example.westudy;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,52 +12,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link skills_DA_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class skills_DA_Fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    CheckBox da1,da2,da3,da4;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    SharedPreferences sharedPreferences;
+    private static final String PREFS_NAME = "myPrefs";
+    private static final String CHECKBOX_1_DA = "da1";
+    private static final String CHECKBOX_2_DA = "da2";
+    private static final String CHECKBOX_3_DA = "da3";
+    private static final String CHECKBOX_4_DA = "da4";
+
 
     public skills_DA_Fragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment skills_DA_Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static skills_DA_Fragment newInstance(String param1, String param2) {
-        skills_DA_Fragment fragment = new skills_DA_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -87,7 +60,55 @@ public class skills_DA_Fragment extends Fragment {
         cp_vid4.getSettings().setJavaScriptEnabled(true);
         cp_vid4.setWebChromeClient(new WebChromeClient());
 
-        // Inflate the layout for this fragment
+        da1 = view.findViewById(R.id.checkBox);
+        da2 = view.findViewById(R.id.checkBox2);
+        da3 = view.findViewById(R.id.checkBox3);
+        da4 = view.findViewById(R.id.checkBox4);
+
+        sharedPreferences = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        da1.setChecked(sharedPreferences.getBoolean(CHECKBOX_1_DA, false));
+        da2.setChecked(sharedPreferences.getBoolean(CHECKBOX_2_DA, false));
+        da3.setChecked(sharedPreferences.getBoolean(CHECKBOX_3_DA, false));
+        da4.setChecked(sharedPreferences.getBoolean(CHECKBOX_4_DA, false));
+
+        da1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                editor.putBoolean(CHECKBOX_1_DA, isChecked);
+                editor.apply();
+            }
+        });
+
+        da2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                editor.putBoolean(CHECKBOX_2_DA, isChecked);
+                editor.apply();
+            }
+        });
+
+        da3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                editor.putBoolean(CHECKBOX_3_DA, isChecked);
+                editor.apply();
+            }
+        });
+
+        da4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                editor.putBoolean(CHECKBOX_4_DA, isChecked);
+                editor.apply();
+            }
+        });
+
         return view;
     }
 }

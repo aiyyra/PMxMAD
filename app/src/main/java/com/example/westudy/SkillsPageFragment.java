@@ -11,9 +11,12 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class SkillsPageFragment extends Fragment {
@@ -29,7 +32,11 @@ public class SkillsPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
+
         return inflater.inflate(R.layout.fragment_skills_page, container, false);
+
     }
 
     ShapeableImageView iBtnCP,iBtnDA,iBtnPM;

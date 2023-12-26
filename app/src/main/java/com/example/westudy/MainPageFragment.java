@@ -91,7 +91,7 @@ public class MainPageFragment extends Fragment {
         iBtnCP = view.findViewById(R.id.iBtnCP);
         iBtnDA = view.findViewById(R.id.iBtnDA);
         iBtnPM = view.findViewById(R.id.iBtnPM);
-        viewAllSkills = view.findViewById(R.id.viewAllSkills);
+
     }
 
     public void setBtnAction(View view){
