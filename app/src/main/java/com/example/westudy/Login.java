@@ -15,12 +15,16 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.westudy.Model.UserModel;
+import com.example.westudy.Utils.FirebaseUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 public class Login extends AppCompatActivity {
 
@@ -28,6 +32,8 @@ public class Login extends AppCompatActivity {
     Button BTNLogin,BtnClickRegister;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
+    UserModel userModel;
+    String email,password;
 
     @Override
     public void onStart() {
@@ -69,7 +75,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
-                String email,password;
+
                 email = editTextEmail.getText().toString();
                 password = editTextPassword.getText().toString();
 
@@ -92,10 +98,8 @@ public class Login extends AppCompatActivity {
                                     Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
 
-                                    Toast.makeText(getApplicationContext(),"Login Successfully",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), MainPage.class);
-                                    startActivity(intent);
-                                    finish();
+                                    getUser();
+                                    setUser();
 
                                 } else {
                                     // If sign in fails, display a message to the user.
@@ -110,12 +114,36 @@ public class Login extends AppCompatActivity {
 
             }
         });
+    }
+    public void getUser(){
+        FirebaseUtil.currentUserDetails().get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()){
+                    userModel = task.getResult().toObject(UserModel.class);
+                }
+            }
+        });
+    }
 
+    public void setUser() {
+        if(userModel==null){
+            userModel = new UserModel(email, Timestamp.now(),FirebaseUtil.currentUserID());
+        }
+        FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    login();
+                }
+            }
+        });
+    }
 
-
-
-
-
-
+    public void login(){
+        Toast.makeText(getApplicationContext(),"Login Successfully",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), MainPage.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 }
