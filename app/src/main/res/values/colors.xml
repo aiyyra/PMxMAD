@@ -12,5 +12,11 @@
 
     <color name="colorPrimary">#2D4263</color>
     <color name="colorAccent">#ECDBBA</color>
+<<<<<<< HEAD
 >>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
+=======
+
+    <color name="chat_color_sender">#1E88E5</color>
+    <color name="chat_color_receiver">#7CB342</color>
+>>>>>>> aa9a34a7256e389e583a09364b43a0dd30eed307
 </resources>

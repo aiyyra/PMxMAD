@@ -19,11 +19,17 @@
         android:theme="@style/Theme.Material3.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".BookAppointmentActivity"
             android:exported="false" />
         <activity
             android:name=".UpcomingAppointmentActivity"
             android:exported="false" /> <!-- Used to use theme.WeStudy -->
+=======
+            android:name=".ChatPersonal"
+            android:exported="false" />
+        <!-- Used to use theme.WeStudy -->
+>>>>>>> aa9a34a7256e389e583a09364b43a0dd30eed307
         <activity
             android:name=".Login"
             android:exported="true">
@@ -41,10 +47,16 @@
             android:exported="false" />
 =======
         </activity>
+<<<<<<< HEAD
          <activity
          android:name=".Register"
          android:exported="false" />
 >>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
+=======
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+>>>>>>> aa9a34a7256e389e583a09364b43a0dd30eed307
         <activity
             android:name=".MainPage"
             android:exported="false" />
