@@ -1,6 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-<<<<<<< HEAD
     <style name="Base.Theme.Westudy" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/blue</item>
         <!-- for back arrow navigation color -->
@@ -9,12 +8,11 @@
         <!-- Text appearance customization -->
         <item name="textAppearanceHeadline1">@style/TextAppearanceToolbar</item>
         <!-- Add more text appearance attributes as needed -->
-=======
-    <style name="Base.Theme.Westudy" parent="Theme.Material3.Light.NoActionBar">
+    </style>
+    <style name="Base.Theme.Westudy." parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
->>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
     </style>
 
     <!-- Define toolbar text appearances -->
@@ -30,4 +28,6 @@
         <item name="android:fontFamily">@font/inter_bold</item>
         <!-- Add other attributes as needed for headline 1 -->
     </style>
+
+    <style name="Theme.Westudy" parent="Base.Theme.Westudy" />
 </resources>

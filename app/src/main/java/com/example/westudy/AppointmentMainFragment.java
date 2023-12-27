@@ -1,26 +1,29 @@
 package com.example.westudy;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.Navigation;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.tabs.TabLayout;
+import com.example.westudy.Adapter.AppointmentAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AppointmentMainFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AppointmentMainFragment extends Fragment {
+public class AppointmentMainFragment extends Fragment implements OnRemoveClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,9 +34,8 @@ public class AppointmentMainFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    TabLayout tabLayout;
-    ViewPager2 viewPager2;
-    Appointment_ViewPagerAdapter AppointmentVPA;
+    private RecyclerView recyclerView;
+    static ArrayList<Appointment> appointmentArrayList;
 
     public AppointmentMainFragment() {
         // Required empty public constructor
@@ -45,7 +47,7 @@ public class AppointmentMainFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AnnouncementFragment.
+     * @return A new instance of fragment AppointmentMainFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static AppointmentMainFragment newInstance(String param1, String param2) {
@@ -66,65 +68,52 @@ public class AppointmentMainFragment extends Fragment {
         }
     }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_appointment_main, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        tabLayout = rootView.findViewById(R.id.tab_layout);
-        viewPager2 = rootView.findViewById(R.id.view_pager);
-        AppointmentVPA = new Appointment_ViewPagerAdapter(requireActivity());
-        viewPager2.setAdapter(AppointmentVPA);
+        View view = inflater.inflate(R.layout.fragment_appointment_main, container, false);
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager2.setCurrentItem(tab.getPosition());
-            }
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                // Unselected tab
-            }
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-                // Reselected tab
+        FloatingActionButton FABBookAppointment = view.findViewById(R.id.FABBookAppointment);
+        FABBookAppointment.setOnClickListener(v -> {
+            try {
+                Navigation.findNavController(v).navigate(R.id.action_appointmentMainFragment_to_bookAppointmentFragment);
+            } catch (Exception e) {
+                Log.e("NavigationError", "Error navigating to BookAppointmentFragment: " + e.getMessage());
             }
         });
 
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                tabLayout.getTabAt(position).select();
-            }
-        });
-
-        Button BtnBookAppointment = rootView.findViewById(R.id.BtnBookAppointment);
-        BtnBookAppointment.setOnClickListener( v -> {
-            Navigation.findNavController(rootView).navigate(R.id.action_appointmentPage_to_bookAppointmentPage);
-            //startActivityForResult(intent, NEW_NOTE_ACTIVITY_REQUEST_CODE);
-        });
-
-        return rootView;
+        // Inflate the layout for this fragment
+        return view;
     }
 
-    public class Appointment_ViewPagerAdapter extends FragmentStateAdapter {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        
+        dataInitialize();
 
-        public Appointment_ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
-            super(fragmentActivity);
-        }
-
-        @NonNull
-        @Override
-        public Fragment createFragment(int position) {
-            if (position == 1) {
-                return new PastAppointmentFragment();
-            }
-            return new UpcomingAppointmentFragment();
-
-        }
-        @Override
-        public int getItemCount() {
-            return 2;
-        }
+        recyclerView = view.findViewById(R.id.RVAppointment);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        AppointmentAdapter adapter = new AppointmentAdapter(getContext(),appointmentArrayList);
+        recyclerView.setAdapter(adapter);
+        adapter.setOnRemoveClickListener(this); // Set the remove click listener
+        adapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void onRemoveClick(int position) {
+        // Remove appointment at the given position from the list
+        appointmentArrayList.remove(position);
+        recyclerView.getAdapter().notifyItemRemoved(position);
+    }
+
+    private void dataInitialize() {
+
+        // Initialize appointmentArrayList if it's not initialized
+        if (appointmentArrayList == null) {
+            appointmentArrayList = new ArrayList<>();
+        }
+    }
 }

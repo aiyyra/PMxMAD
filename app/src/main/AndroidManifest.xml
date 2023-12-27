@@ -8,28 +8,26 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-<<<<<<< HEAD
         android:icon="@drawable/logoapp"
-=======
-        android:icon="@drawable/logo_app"
->>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.Light.NoActionBar"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
-            android:name=".BookAppointmentActivity"
-            android:exported="false" />
+            android:name=".AppointmentBookingActivity"
+            android:exported="false" >
+        </activity>
+
         <activity
-            android:name=".UpcomingAppointmentActivity"
+            android:name=".AppointmentMainActivity"
             android:exported="false" /> <!-- Used to use theme.WeStudy -->
-=======
+
+        <!-- Used to use theme.WeStudy -->
+
+        <activity
             android:name=".ChatPersonal"
             android:exported="false" />
-        <!-- Used to use theme.WeStudy -->
->>>>>>> aa9a34a7256e389e583a09364b43a0dd30eed307
         <activity
             android:name=".Login"
             android:exported="true">
@@ -38,25 +36,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-<<<<<<< HEAD
         </activity> <!-- <activity -->
         <!-- android:name=".SkillsPage" -->
         <!-- android:exported="false" /> -->
         <activity
             android:name=".Register"
-            android:exported="false" />
-=======
+            android:exported="false" >
         </activity>
-<<<<<<< HEAD
-         <activity
-         android:name=".Register"
-         android:exported="false" />
->>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
-=======
-        <activity
-            android:name=".Register"
-            android:exported="false" />
->>>>>>> aa9a34a7256e389e583a09364b43a0dd30eed307
+
         <activity
             android:name=".MainPage"
             android:exported="false" />

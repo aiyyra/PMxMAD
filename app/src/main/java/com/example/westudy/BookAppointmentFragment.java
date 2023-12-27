@@ -1,13 +1,11 @@
 package com.example.westudy;
 
-import static android.app.Activity.RESULT_CANCELED;
-import static android.app.Activity.RESULT_OK;
 import static android.content.ContentValues.TAG;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,25 +14,71 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link BookAppointmentFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class BookAppointmentFragment extends Fragment implements AdapterView.OnItemSelectedListener{
 
-    public static final String ExtraDate = "date";
-    public static final String ExtraCourse = "course";
-    public static final String ExtraSlot = "slot";
-    private DatePickerDialog.OnDateSetListener dateSetListener;
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
 
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+    private DatePickerDialog.OnDateSetListener dateSetListener;
     Spinner spinner_teacher;
-    List<String> name_teacher;
+
+    public BookAppointmentFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment BookAppointmentFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static BookAppointmentFragment newInstance(String param1, String param2) {
+        BookAppointmentFragment fragment = new BookAppointmentFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,6 +107,9 @@ public class BookAppointmentFragment extends Fragment implements AdapterView.OnI
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_teacher.setAdapter(adapter);
 
+        //declare message content
+        EditText ETMessage = view.findViewById(R.id.ETMessage);
+
         //Date segment
         TextView TVDate = view.findViewById(R.id.TVDate);
         Button BtnDatePicker = view.findViewById(R.id.BtnDatePicker);
@@ -82,66 +129,100 @@ public class BookAppointmentFragment extends Fragment implements AdapterView.OnI
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
-                Log.d(TAG, "onDateSet: dd/mm/yyyy "+dayOfMonth+"/"+month+"/"+year);
-                String Date = dayOfMonth+"/"+month+"/"+year;
+                Log.d(TAG, "onDateSet: dd/mm/yyyy "+dayOfMonth+"-"+month+"-"+year);
+                String Date = dayOfMonth+"-"+month+"-"+year;
                 TVDate.setText(Date);
             }
         };
         //end of date segment
 
-        final Button BtnSubmitAppointment = view.findViewById(R.id.BtnSubmitAppointment);
-        BtnSubmitAppointment.setOnClickListener( v -> {
-            Intent replyIntent = new Intent();
+        Button BtnSubmitAppointment = view.findViewById(R.id.BtnSubmitAppointment);
+        BtnSubmitAppointment.setOnClickListener(v ->{
 
-            int course = 0;
-            if (RBChemistry.isChecked())
-                course = 1;
-            else if (RBEnglish.isChecked())
-                course = 2;
-            else if (RBGeography.isChecked())
-                course = 3;
-            else if (RBPhysics.isChecked())
-                course = 4;
-            else if (RBMaths.isChecked())
-                course = 5;
-            else if(RBBiology.isChecked())
-                course = 6;
+            String date = TVDate.getText().toString();
+            String teacher = spinner_teacher.getSelectedItem().toString();
+            String message = ETMessage.getText().toString();
 
-            int slot = 0;
+            String course = "";
+            if (RBChemistry.isChecked()){
+                course = RBChemistry.getText().toString();}
+            else if (RBEnglish.isChecked()){
+                course = RBEnglish.getText().toString();}
+            else if (RBGeography.isChecked()){
+                course = RBGeography.getText().toString();}
+            else if (RBPhysics.isChecked()){
+                course = RBPhysics.getText().toString();}
+            else if (RBMaths.isChecked()){
+                course = RBMaths.getText().toString();}
+            else if(RBBiology.isChecked()){
+                course = RBBiology.getText().toString();}
+
+            String slot = "";
             if (RB11_00.isChecked())
-                slot = 1;
+                slot = RB11_00.getText().toString();
             else if (RB11_30.isChecked())
-                slot = 2;
+                slot = RB11_30.getText().toString();
             else if (RB12_00.isChecked())
-                slot = 3;
+                slot = RB12_00.getText().toString();
             else if (RB12_30.isChecked())
-                slot = 4;
+                slot = RB12_30.getText().toString();
             else if (RB2_00.isChecked())
-                slot = 5;
+                slot = RB2_00.getText().toString();
             else if(RB2_30.isChecked())
-                slot = 6;
+                slot = RB2_30.getText().toString();
 
-            if (TextUtils.isEmpty(TVDate.getText())) {
-                requireActivity().setResult(RESULT_CANCELED, replyIntent);
+            // Check if any required field is empty
+            if (date.isEmpty() || teacher.isEmpty() || course.isEmpty() || slot.isEmpty()) {
+                // Prompt user to fill in all required fields
+                Toast.makeText(getContext(), "Appointment is not valid. Please fill in all details.", Toast.LENGTH_SHORT).show();
             } else {
-                replyIntent.putExtra(ExtraCourse, Integer.toString(course));
-                replyIntent.putExtra(ExtraSlot, Integer.toString(slot));
-                requireActivity().setResult(RESULT_OK, replyIntent);
+                // Create an Appointment object with the obtained data
+                Appointment appointment = new Appointment(date, slot, course, teacher, message);
+                AppointmentMainFragment.appointmentArrayList.add(appointment);
+                
+                // Save appointment data to SharedPreferences
+                saveAppointment(appointment);
+
+                Navigation.findNavController(v).popBackStack();
             }
-            //requireActivity().finish(); --> used for return back to previous activity(we want to return to previous fragment)
-            requireActivity().getSupportFragmentManager().popBackStack(); // Finish the activity to return to the previous screen (fragment)
         });
+        // Inflate the layout for this fragment
         return view;
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String teacher = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), teacher, Toast.LENGTH_SHORT).show();
+    // Method to save appointment data using SharedPreferences
+    private void saveAppointment(Appointment appointment) {
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("Appointments", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        // Get existing appointments from SharedPreferences
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("appointments", "");
+        ArrayList<Appointment> appointmentList;
+        if (json.isEmpty()) {
+            appointmentList = new ArrayList<>();
+        } else {
+            Type type = new TypeToken<ArrayList<Appointment>>() {}.getType();
+            appointmentList = gson.fromJson(json, type);
+        }
+
+        // Add new appointment
+        appointmentList.add(appointment);
+
+        // Save updated appointment list to SharedPreferences
+        String updatedJson = gson.toJson(appointmentList);
+        editor.putString("appointments", updatedJson);
+        editor.apply();
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String teacher = adapterView.getItemAtPosition(i).toString();
+        Toast.makeText(adapterView.getContext(), teacher, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }

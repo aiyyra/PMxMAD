@@ -1,5 +1,10 @@
 package com.example.westudy;
 
+import android.content.res.ColorStateList;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,18 +15,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.content.res.ColorStateList;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.Firebase;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainPage extends AppCompatActivity {
 
@@ -53,6 +47,8 @@ public class MainPage extends AppCompatActivity {
 
         // Set up bottom navigation with NavController
         setupBottomNavMenu(navController);
+
+        
 }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -84,5 +80,7 @@ public class MainPage extends AppCompatActivity {
 
         // Set the background for the icon in the bottom navigation view
         bottomNavigationView.setItemActiveIndicatorColor(ColorStateList.valueOf(ContextCompat.getColor(this,R.color.transparent)));
+
+
     }
 }

@@ -49,11 +49,7 @@
     <fragment
         android:id="@+id/profilePageDest"
         android:name="com.example.westudy.ProfileFragment"
-<<<<<<< HEAD
         android:label="User Profile"
-=======
-        android:label="Profile"
->>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/chatPageDest"
@@ -108,11 +104,7 @@
     <fragment
         android:id="@+id/settingPageDest"
         android:name="com.example.westudy.SettingFragment"
-<<<<<<< HEAD
         android:label="Settings"
-=======
-        android:label="Setting"
->>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
         tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/courseMainFragment"
@@ -126,13 +118,15 @@
     <fragment
         android:id="@+id/appointmentMainFragment"
         android:name="com.example.westudy.AppointmentMainFragment"
-        android:label="Your Appointment" >
+        android:label="Your Appointment"
+        tools:layout="@layout/fragment_appointment_main" >
         <action
-            android:id="@+id/action_appointmentPage_to_bookAppointmentPage"
-            app:destination="@id/book_appointment_fragment" />
+            android:id="@+id/action_appointmentMainFragment_to_bookAppointmentFragment"
+            app:destination="@id/bookAppointmentFragment" />
     </fragment>
     <fragment
-        android:id="@+id/book_appointment_fragment"
+        android:id="@+id/bookAppointmentFragment"
         android:name="com.example.westudy.BookAppointmentFragment"
-        android:label="Book Appointment" />
+        android:label="Book Appointment"
+        tools:layout="@layout/fragment_book_appointment" />
 </navigation>

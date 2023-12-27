@@ -25,4 +25,5 @@
         <item>Cikgu Amir</item>
         <item>Cikgu Iman</item>
     </string-array>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

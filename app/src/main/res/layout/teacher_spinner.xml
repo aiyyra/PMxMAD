@@ -3,8 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:textSize="18sp"
-    android:fontFamily="@font/inter_medium"
-    android:background="@color/silver"
-    android:textColor="@color/blue">
+    android:background="@color/cream"
+    android:textSize="18sp">
 </TextView>

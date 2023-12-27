@@ -23,16 +23,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--Radio group for slots selection-->
+
         <TextView
             android:id="@+id/TVMessageTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="72dp"
             android:fontFamily="@font/inter_bold"
             android:text="Message to Teacher :"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/TVCoursesTitle"
+            app:layout_constraintStart_toStartOf="@+id/TVDateTitleAdd"
             app:layout_constraintTop_toBottomOf="@+id/TVTeacherTitle" />
 
         <TextView
@@ -40,26 +42,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
             android:fontFamily="@font/inter_bold"
             android:text="Select Course :"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/TVSlotsTitle"
-            app:layout_constraintTop_toBottomOf="@+id/RGSlots" />
-
-        <!--Radio group for slots selection-->
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnDatePicker" />
 
         <TextView
             android:id="@+id/TVTeacherTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="436dp"
             android:fontFamily="@font/inter_bold"
             android:text="Select Teacher :"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/TVSlotsTitle"
-            app:layout_constraintTop_toBottomOf="@+id/RGCourses" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/TVDateTitleAdd"
+            app:layout_constraintTop_toBottomOf="@+id/TVDateTitleAdd" />
 
         <TextView
             android:id="@+id/TVDate"
@@ -67,8 +70,8 @@
             android:layout_height="25dp"
             android:layout_marginStart="16dp"
             android:ems="10"
-            android:minHeight="48dp"
             android:fontFamily="@font/inter_medium"
+            android:minHeight="48dp"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -77,14 +80,13 @@
 
         <Button
             android:id="@+id/BtnSubmitAppointment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="219dp"
+            android:layout_height="51dp"
             android:layout_margin="@dimen/big_padding"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/red"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/inter_medium"
             android:text="Submit Appointment"
-            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/ETMessage"
             app:layout_constraintTop_toBottomOf="@+id/ETMessage" />
@@ -94,12 +96,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/big_padding"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="@color/red"
-            android:fontFamily="@font/inter_bold"
+            android:fontFamily="@font/inter_medium"
             android:text="Open Date Picker"
-            android:textColor="@color/black"
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -108,180 +109,145 @@
 
         <RadioGroup
             android:id="@+id/RGSlots"
-            android:layout_width="match_parent"
-            android:layout_height="88dp"
-            android:layout_marginStart="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/TVSlotsTitle"
             app:layout_constraintStart_toStartOf="@+id/TVSlotsTitle"
             app:layout_constraintTop_toBottomOf="@+id/TVSlotsTitle">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/RB11_00"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_11_00_am"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-                <RadioButton
-                    android:id="@+id/RB11_00"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="@string/_11_00_am"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <RadioButton
-                    android:id="@+id/RB11_30"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="@string/_11_30_am"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <RadioButton
-                    android:id="@+id/RB12_00"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="@string/_12_00_pm"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    tools:ignore="TouchTargetSizeCheck" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/RB11_30"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_11_30_am"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-                <RadioButton
-                    android:id="@+id/RB12_30"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="@string/_12_30_pm"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RB12_00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_12_00_pm"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-                <RadioButton
-                    android:id="@+id/RB2_00"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="@string/_2_00_pm"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    tools:ignore="TouchTargetSizeCheck" />
 
-                <RadioButton
-                    android:id="@+id/RB2_30"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="@string/_2_30_pm"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp"
-                    tools:ignore="TouchTargetSizeCheck" />
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/RB12_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_12_30_pm"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RB2_00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_2_00_pm"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RB2_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_2_30_pm"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
         </RadioGroup>
 
         <RadioGroup
             android:id="@+id/RGCourses"
-            android:layout_width="match_parent"
-            android:layout_height="88dp"
-            android:layout_marginStart="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="18dp"
+            app:layout_constraintEnd_toEndOf="@+id/TVCoursesTitle"
             app:layout_constraintStart_toStartOf="@+id/TVCoursesTitle"
             app:layout_constraintTop_toBottomOf="@+id/TVCoursesTitle">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/RBChemistry"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Chemistry"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-                <RadioButton
-                    android:id="@+id/RBChemistry"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="Chemistry"
-                    android:textColor="@color/blue"
-                    android:textSize="14sp"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <RadioButton
-                    android:id="@+id/RBEnglish"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="English"
-                    android:textColor="@color/blue"
-                    android:textSize="14sp"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <RadioButton
-                    android:id="@+id/RBGeography"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="Geography"
-                    android:textColor="@color/blue"
-                    android:textSize="14sp"
-                    tools:ignore="TouchTargetSizeCheck" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/RBEnglish"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="English"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-                <RadioButton
-                    android:id="@+id/RBPhysics"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="Physics"
-                    android:textColor="@color/blue"
-                    android:textSize="14sp"
-                    tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBGeography"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Geography"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-                <RadioButton
-                    android:id="@+id/RBMaths"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="Maths"
-                    android:textColor="@color/blue"
-                    android:textSize="14sp"
-                    tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/RBPhysics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Physics"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-                <RadioButton
-                    android:id="@+id/RBBiology"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/inter_medium"
-                    android:text="Biology"
-                    android:textColor="@color/blue"
-                    android:textSize="14sp"
-                    tools:ignore="TouchTargetSizeCheck" />
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/RBMaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Maths"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RBBiology"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Biology"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
         </RadioGroup>
 
         <EditText
@@ -290,11 +256,11 @@
             android:layout_height="141dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
-            android:background="@color/cream"
             android:ems="10"
-            android:fontFamily="@font/inter_medium"
             android:gravity="start|top"
-            android:hint="Type your message here..."
+            android:hint="Type your message here(if needed)..."
+            android:background="@color/cream"
+            android:fontFamily="@font/inter_medium"
             android:inputType="textMultiLine"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -305,15 +271,14 @@
             android:id="@+id/TVSlotsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
-            android:layout_marginEnd="22dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/inter_bold"
             android:text="Select Slot :"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/BtnDatePicker"
-            app:layout_constraintStart_toStartOf="@+id/TVDateTitleAdd"
-            app:layout_constraintTop_toBottomOf="@+id/TVDateTitleAdd" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnDatePicker" />
 
         <Spinner
             android:id="@+id/spinner_teacher"

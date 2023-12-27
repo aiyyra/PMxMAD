@@ -2,9 +2,6 @@ package com.example.westudy;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.westudy.Model.UserModel;
 import com.example.westudy.Utils.FirebaseUtil;
@@ -111,8 +111,6 @@ public class Login extends AppCompatActivity {
                         });
             }
         });
-<<<<<<< HEAD
-=======
     }
     public void getUser(){
         FirebaseUtil.currentUserDetails().get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -144,6 +142,5 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainPage.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
->>>>>>> aa9a34a7256e389e583a09364b43a0dd30eed307
     }
 }
