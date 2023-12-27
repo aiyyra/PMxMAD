@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,6 +20,27 @@
             android:layout_height="match_parent">
 
 
+=======
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".skills_PM_Fragment">
+
+<ScrollView
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="16dp"
+    tools:layout_editor_absoluteY="26dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+>>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
             <TextView
                 android:id="@+id/textIntroPM"
                 android:layout_width="match_parent"
@@ -156,4 +178,8 @@
     </ScrollView>
 
 
+<<<<<<< HEAD
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+    </androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561

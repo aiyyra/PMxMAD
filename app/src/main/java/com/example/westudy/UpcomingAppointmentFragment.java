@@ -28,7 +28,6 @@ public class UpcomingAppointmentFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_upcoming_appointment, container, false);
     }
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -55,7 +54,6 @@ public class UpcomingAppointmentFragment extends Fragment {
         final AppointmentNoteListAdapter adapter = new AppointmentNoteListAdapter(new AppointmentNoteListAdapter.NoteDiff());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setHasFixedSize(true);
 
         mNoteViewModel = new ViewModelProvider(this).get(AppointmentNoteViewModel.class);
 

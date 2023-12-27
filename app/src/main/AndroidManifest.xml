@@ -8,7 +8,11 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+<<<<<<< HEAD
         android:icon="@drawable/logoapp"
+=======
+        android:icon="@drawable/logo_app"
+>>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -28,12 +32,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<<<<<<< HEAD
         </activity> <!-- <activity -->
         <!-- android:name=".SkillsPage" -->
         <!-- android:exported="false" /> -->
         <activity
             android:name=".Register"
             android:exported="false" />
+=======
+        </activity>
+         <activity
+         android:name=".Register"
+         android:exported="false" />
+>>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
         <activity
             android:name=".MainPage"
             android:exported="false" />

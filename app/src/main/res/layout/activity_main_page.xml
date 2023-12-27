@@ -16,10 +16,15 @@
             android:id="@+id/TBMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:background="@drawable/shape"
             android:backgroundTint="@color/blue"
             android:minHeight="?attr/actionBarSize"
             app:theme="@style/Base.Theme.Westudy"/>
+=======
+            android:background="@color/blue"
+            android:minHeight="?attr/actionBarSize"/>
+>>>>>>> d1dd120a7bc40079c1337feae793e61ada6ca561
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/NHFMain"
