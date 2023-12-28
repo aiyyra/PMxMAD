@@ -42,6 +42,9 @@
         <action
             android:id="@+id/action_skillsPage_to_PMPage"
             app:destination="@id/PMPageDest" />
+        <action
+            android:id="@+id/action_skillsPage_to_progressPage"
+            app:destination="@id/progressPageDest" />
 
     </fragment>
     <fragment
@@ -106,4 +109,9 @@
         android:name="com.example.westudy.SettingFragment"
         android:label="Setting"
         tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/progressPageDest"
+        android:name="com.example.westudy.skills_progress_fragment"
+        android:label="Progress"
+        tools:layout="@layout/fragment_skills_progress" />
 </navigation>

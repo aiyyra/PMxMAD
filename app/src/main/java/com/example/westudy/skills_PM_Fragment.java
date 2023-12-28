@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.widget.CompoundButton;
 public class skills_PM_Fragment extends Fragment {
 
     CheckBox pm1,pm2,pm3,pm4;
+    private SharedViewModel sharedViewModel;
 
     SharedPreferences sharedPreferences;
     private static final String PREFS_NAME = "myPrefs";
@@ -29,6 +32,12 @@ public class skills_PM_Fragment extends Fragment {
 
 
     public skills_PM_Fragment() {
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
     }
 
     @Override
@@ -74,44 +83,71 @@ public class skills_PM_Fragment extends Fragment {
         pm3.setChecked(sharedPreferences.getBoolean(CHECKBOX_3_PM, false));
         pm4.setChecked(sharedPreferences.getBoolean(CHECKBOX_4_PM, false));
 
+        setupCheckBoxListeners(editor);
 
+        return view;
+
+    }
+    private void setupCheckBoxListeners(SharedPreferences.Editor editor) {
         pm1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 editor.putBoolean(CHECKBOX_1_PM, isChecked);
                 editor.apply();
+                updateProgress();
             }
         });
 
         pm2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 editor.putBoolean(CHECKBOX_2_PM, isChecked);
                 editor.apply();
+                updateProgress();
             }
         });
 
         pm3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 editor.putBoolean(CHECKBOX_3_PM, isChecked);
                 editor.apply();
+                updateProgress();
             }
         });
 
         pm4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 editor.putBoolean(CHECKBOX_4_PM, isChecked);
                 editor.apply();
+                updateProgress();
             }
         });
+    }
 
+    private void updateProgress() {
+        // Calculate progress based on checkbox states and update the ViewModel
+        int progress = calculateProgress();
+        sharedViewModel.updateProgressPM(progress);
+    }
 
-        return view;
+    private int calculateProgress() {
+        // Implement your logic to calculate progress based on checkbox states
+        // For example, if all checkboxes are checked, return 100; if half are checked, return 50, and so on.
+        // This logic depends on your specific requirements.
+        int totalCheckboxes = 4;
+        int checkedCheckboxes = 0;
+
+        if (pm1.isChecked()) checkedCheckboxes++;
+        if (pm2.isChecked()) checkedCheckboxes++;
+        if (pm3.isChecked()) checkedCheckboxes++;
+        if (pm4.isChecked()) checkedCheckboxes++;
+
+        if (totalCheckboxes > 0) {
+            return (checkedCheckboxes * 100) / totalCheckboxes;
+        } else {
+            return 0;
+        }
     }
 }

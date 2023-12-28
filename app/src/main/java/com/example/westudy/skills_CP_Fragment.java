@@ -5,10 +5,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -31,6 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 public class skills_CP_Fragment extends Fragment {
 
     CheckBox cp1, cp2, cp3, cp4;
+    private SharedViewModel sharedViewModel;
 
     SharedPreferences sharedPreferences;
     private static final String PREFS_NAME = "myPrefs";
@@ -39,15 +42,14 @@ public class skills_CP_Fragment extends Fragment {
     private static final String CHECKBOX_3_CP = "cp3";
     private static final String CHECKBOX_4_CP = "cp4";
 
-
-//    FirebaseDatabase database;
-//    DatabaseReference reference;
-//    Member member;
-//    int i = 0;
-
     public skills_CP_Fragment() {
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,9 +81,6 @@ public class skills_CP_Fragment extends Fragment {
         cp_vid4.getSettings().setJavaScriptEnabled(true);
         cp_vid4.setWebChromeClient(new WebChromeClient());
 
-//        reference = database.getInstance().getReference().child("progress");
-//        member = new Member();
-
         cp1 = view.findViewById(R.id.checkBox);
         cp2 = view.findViewById(R.id.checkBox2);
         cp3 = view.findViewById(R.id.checkBox3);
@@ -95,62 +94,72 @@ public class skills_CP_Fragment extends Fragment {
         cp3.setChecked(sharedPreferences.getBoolean(CHECKBOX_3_CP, false));
         cp4.setChecked(sharedPreferences.getBoolean(CHECKBOX_4_CP, false));
 
+        // Set up CheckBox change listeners
+        setupCheckBoxListeners(editor);
+
+        return view;
+    }
+
+    private void setupCheckBoxListeners(SharedPreferences.Editor editor) {
         cp1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 editor.putBoolean(CHECKBOX_1_CP, isChecked);
                 editor.apply();
+                updateProgress();
             }
         });
 
         cp2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 editor.putBoolean(CHECKBOX_2_CP, isChecked);
                 editor.apply();
+                updateProgress();
             }
         });
 
         cp3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 editor.putBoolean(CHECKBOX_3_CP, isChecked);
                 editor.apply();
+                updateProgress();
             }
         });
 
         cp4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 editor.putBoolean(CHECKBOX_4_CP, isChecked);
                 editor.apply();
+                updateProgress();
             }
         });
+    }
 
+    private void updateProgress() {
+        // Calculate progress based on checkbox states and update the ViewModel
+        int progress = calculateProgress();
+        sharedViewModel.updateProgressCP(progress);
+    }
 
+    private int calculateProgress() {
+        // Implement your logic to calculate progress based on checkbox states
+        // For example, if all checkboxes are checked, return 100; if half are checked, return 50, and so on.
+        // This logic depends on your specific requirements.
+        int totalCheckboxes = 4;
+        int checkedCheckboxes = 0;
 
-//        reference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if(snapshot.exists()){
-//                    i = (int) snapshot.getChildrenCount();
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+        if (cp1.isChecked()) checkedCheckboxes++;
+        if (cp2.isChecked()) checkedCheckboxes++;
+        if (cp3.isChecked()) checkedCheckboxes++;
+        if (cp4.isChecked()) checkedCheckboxes++;
 
-
-
-        return view;
-
+        if (totalCheckboxes > 0) {
+            return (checkedCheckboxes * 100) / totalCheckboxes;
+        } else {
+            return 0;
+        }
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -40,6 +41,7 @@ public class SkillsPageFragment extends Fragment {
     }
 
     ShapeableImageView iBtnCP,iBtnDA,iBtnPM;
+    AppCompatButton btnProgress;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -52,6 +54,7 @@ public class SkillsPageFragment extends Fragment {
         iBtnCP = view.findViewById(R.id.roundRectangle);
         iBtnDA = view.findViewById(R.id.roundRectangle2);
         iBtnPM = view.findViewById(R.id.roundRectangle3);
+        btnProgress = view.findViewById(R.id.BtnProgress);
     }
 
     public void setBtnAction(View view){
@@ -73,5 +76,15 @@ public class SkillsPageFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_PMPage);
             }
         });
+
+        btnProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_progressPage);
+            }
+        });
     }
 }
+
+
+
