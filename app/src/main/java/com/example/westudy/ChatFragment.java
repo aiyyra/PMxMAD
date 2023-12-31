@@ -3,10 +3,20 @@ package com.example.westudy;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+
+import com.example.westudy.Adapter.SearchUserRecyclerAdapter;
+import com.example.westudy.Model.UserModel;
+import com.example.westudy.Utils.FirebaseUtil;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.Query;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +24,12 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ChatFragment extends Fragment {
+
+    EditText ETSearchUser;
+    ImageButton IBSearchButton;
+    RecyclerView RVUserList;
+
+    SearchUserRecyclerAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +75,45 @@ public class ChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false);
+        View view = inflater.inflate(R.layout.fragment_chat, container, false);
+        initView(view);
+        setupSearchRecyclerView("");
+
+        IBSearchButton.setOnClickListener( v -> {
+            String searchTerm = ETSearchUser.getText().toString();
+            setupSearchRecyclerView(searchTerm);
+        });
+
+
+        return view;
     }
+
+    void setupSearchRecyclerView(String searchTerm) {
+
+        Query query = FirebaseUtil.allUserCollectionReference()
+                .whereGreaterThanOrEqualTo("email",searchTerm);
+
+        FirestoreRecyclerOptions<UserModel> options = new FirestoreRecyclerOptions.Builder<UserModel>()
+                .setQuery(query, UserModel.class).build();
+
+        adapter = new SearchUserRecyclerAdapter(options,getActivity().getApplicationContext());
+        RVUserList.setLayoutManager(new LinearLayoutManager(getContext()));
+        RVUserList.setAdapter(adapter);
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if(adapter!=null){
+            adapter.startListening();
+        }
+    }
+
+    public void initView(View view) {
+        ETSearchUser = view.findViewById(R.id.ETSearchUser);
+        IBSearchButton = view.findViewById(R.id.IBSearchButton);
+        RVUserList = view.findViewById(R.id.RVUserList);
+    }
+
 }
