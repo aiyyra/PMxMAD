@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "776413077357",
+    "project_id": "hardskill-westudy",
+    "storage_bucket": "hardskill-westudy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776413077357:android:6081e80913ba03b1da8464",
+        "android_client_info": {
+          "package_name": "com.example.westudy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTfj33OSX9582JUnIaw01tAeWvzZaeq7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -47,9 +47,8 @@ public class MainPage extends AppCompatActivity {
 
         // Set up bottom navigation with NavController
         setupBottomNavMenu(navController);
+        }
 
-        
-}
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_bottom, menu);

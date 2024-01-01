@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_mainPage_to_coursePage"
             app:destination="@id/courseMainFragment" />
+        <action
+            android:id="@+id/action_mainPageDest_to_announcementMainFragment"
+            app:destination="@id/announcementMainFragment" />
     </fragment>
     <fragment
         android:id="@+id/skillsPageDest"
@@ -45,6 +48,10 @@
         <action
             android:id="@+id/action_skillsPage_to_PMPage"
             app:destination="@id/PMPageDest" />
+        <action
+            android:id="@+id/action_skillsPage_to_progressPage"
+            app:destination="@id/progressPageDest" />
+
     </fragment>
     <fragment
         android:id="@+id/profilePageDest"
@@ -90,7 +97,9 @@
         android:id="@+id/CPPageDest"
         android:name="com.example.westudy.skills_CP_Fragment"
         android:label="Computer Programming"
-        tools:layout="@layout/fragment_skills__c_p_" />
+        tools:layout="@layout/fragment_skills__c_p_" >
+
+    </fragment>
     <fragment
         android:id="@+id/DAPageDest"
         android:name="com.example.westudy.skills_DA_Fragment"
@@ -129,4 +138,24 @@
         android:name="com.example.westudy.BookAppointmentFragment"
         android:label="Book Appointment"
         tools:layout="@layout/fragment_book_appointment" />
+    <fragment
+        android:id="@+id/progressPageDest"
+        android:name="com.example.westudy.skills_progress_fragment"
+        android:label="Progress"
+        tools:layout="@layout/fragment_skills_progress" />
+
+    <fragment
+        android:id="@+id/announcementMainFragment"
+        android:name="com.example.westudy.AnnouncementMainFragment"
+        android:label="Announcement"
+        tools:layout="@layout/fragment_announcement_main" >
+        <action
+            android:id="@+id/action_announcementMainFragment_to_announcementPostFragment"
+            app:destination="@id/announcementPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/announcementPostFragment"
+        android:name="com.example.westudy.AnnouncementPostFragment"
+        android:label="Post Announcement"
+        tools:layout="@layout/fragment_announcement_post" />
 </navigation>

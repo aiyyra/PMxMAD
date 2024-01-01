@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="How are you?"
+            android:fontFamily="@font/inter_medium"
             android:textColor="@color/white"
             android:textSize="18sp"/>
     </LinearLayout>
@@ -36,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I am fine"
+            android:fontFamily="@font/inter_medium"
             android:textColor="@color/white"
             android:textSize="18sp"/>
     </LinearLayout>

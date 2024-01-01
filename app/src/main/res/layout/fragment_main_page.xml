@@ -16,7 +16,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <HorizontalScrollView
                 android:id="@+id/containerAnnouncement"
                 android:layout_width="match_parent"
@@ -27,70 +26,72 @@
                 app:layout_constraintTop_toBottomOf="@+id/announcement"
                 app:layout_constraintVertical_bias="0.142">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="250dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="12dp"
-                        app:cardCornerRadius="12dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp">
 
-                        <ImageButton
-                            android:id="@+id/btnAnnounce1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="150sp"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:backgroundTint="?attr/colorOnPrimary"
-                            android:padding="0dp"
-                            android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/image_pm"
-                            tools:ignore="ContentDescription" />
-                    </androidx.cardview.widget.CardView>
+                    <ImageButton
+                        android:id="@+id/btnAnnounce1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150sp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:backgroundTint="?attr/colorOnPrimary"
+                        android:padding="0dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/image_pm"
+                        tools:ignore="ContentDescription" />
+                </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="250dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="12dp"
-                        app:cardCornerRadius="12dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp">
 
-                        <ImageButton
-                            android:id="@+id/btnAnnounce2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="150sp"
-                            android:layout_weight="1"
-                            android:padding="0dp"
-                            android:adjustViewBounds="true"
-                            android:backgroundTint="?attr/colorOnPrimary"
-                            android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/image_da"
-                            tools:ignore="ContentDescription" />
-                    </androidx.cardview.widget.CardView>
+                    <ImageButton
+                        android:id="@+id/btnAnnounce2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150sp"
+                        android:layout_weight="1"
+                        android:padding="0dp"
+                        android:adjustViewBounds="true"
+                        android:backgroundTint="?attr/colorOnPrimary"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/image_da"
+                        tools:ignore="ContentDescription" />
+                </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="250dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="12dp"
-                        app:cardCornerRadius="12dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp">
 
-                        <ImageButton
-                            android:id="@+id/btnAnnounce3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="150sp"
-                            android:layout_weight="1"
-                            android:padding="0dp"
-                            android:adjustViewBounds="true"
-                            android:backgroundTint="?attr/colorOnPrimary"
-                            android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/image_cp"
-                            tools:ignore="ContentDescription" />
-                    </androidx.cardview.widget.CardView>
+                    <ImageButton
+                        android:id="@+id/btnAnnounce3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150sp"
+                        android:layout_weight="1"
+                        android:padding="0dp"
+                        android:adjustViewBounds="true"
+                        android:backgroundTint="?attr/colorOnPrimary"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/image_cp"
+                        tools:ignore="ContentDescription" />
+                </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
+            </LinearLayout>
+
             </HorizontalScrollView>
+
 
             <HorizontalScrollView
                 android:id="@+id/containerHardSkill"
@@ -163,7 +164,6 @@
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
             </HorizontalScrollView>
-
             <TextView
                 android:id="@+id/course"
                 android:layout_width="wrap_content"
@@ -451,5 +451,4 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
-
 </ScrollView>

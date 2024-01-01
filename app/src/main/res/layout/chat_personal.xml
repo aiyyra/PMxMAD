@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Username"
+            android:fontFamily="@font/inter_bold"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:padding="12dp"/>
@@ -57,14 +58,16 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="20"
-            android:hint="Write messages"/>
+            android:hint="Write messages"
+            android:fontFamily="@font/inter_medium"/>
 
         <ImageButton
             android:id="@+id/IBtnSendMessage"
             android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_height="43dp"
             android:layout_margin="10dp"
             android:scaleType="centerCrop"
+            android:backgroundTint="@color/white"
             android:src="@drawable/baseline_send_24" />
 
     </LinearLayout>
