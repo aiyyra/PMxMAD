@@ -14,3 +14,4 @@ public class Member {
         this.skill = skill;
     }
 }
+
