@@ -66,9 +66,10 @@ public class MainPageFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_main_page, container, false);
     }
 
-    TextView TVSkillsTitle;
+    TextView TVSkillsTitle, TVAnnouncementTitle;
     ImageButton iBtnChem,iBtnEng,iBtnPhy,iBtnMath,iBtnBio;
     ImageButton iBtnCP,iBtnDA,iBtnPM;
+    TextView viewAllSkills;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -87,9 +88,11 @@ public class MainPageFragment extends Fragment {
         ///////////////////////
         ///////////////////////
         TVSkillsTitle = view.findViewById(R.id.TVSkillsTitle);
+        TVAnnouncementTitle = view.findViewById(R.id.TVAnnouncementTitle);
         iBtnCP = view.findViewById(R.id.iBtnCP);
         iBtnDA = view.findViewById(R.id.iBtnDA);
         iBtnPM = view.findViewById(R.id.iBtnPM);
+
     }
 
     public void setBtnAction(View view){
@@ -132,6 +135,7 @@ public class MainPageFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_mainPage_to_skillsPage);
             }
         });
+
         iBtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,6 +155,14 @@ public class MainPageFragment extends Fragment {
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_mainPage_to_skillsPage);
                 Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_PMPage);
+            }
+        });
+
+        //Announcement
+        TVAnnouncementTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_announcementPage);
             }
         });
     }

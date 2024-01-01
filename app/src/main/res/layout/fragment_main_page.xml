@@ -30,6 +30,7 @@
                 android:text="Courses"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -124,15 +125,21 @@
                     app:layout_constraintTop_toTopOf="@+id/iBtnMath" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/TVAnnouncementTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="40dp"
-                android:paddingTop="30dp"
-                android:text="Announcement"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/TVAnnouncementTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="40dp"
+                    android:paddingTop="30dp"
+                    android:text="Announcement"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints" />
+
+
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -143,7 +150,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    >
 
 
                     <ImageButton
@@ -169,15 +176,21 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <TextView
-                android:id="@+id/TVSkillsTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="40dp"
-                android:paddingTop="30dp"
-                android:text="Skills"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/TVSkillsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="40dp"
+                    android:paddingTop="30dp"
+                    android:text="Hard Skills"
+                    android:layout_marginEnd="210sp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints" />
+
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -246,6 +259,11 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
+
+
+
         </LinearLayout>
     </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

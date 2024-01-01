@@ -1,60 +1,43 @@
 package com.example.westudy;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link skills_PM_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class skills_PM_Fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    CheckBox pm1,pm2,pm3,pm4;
+    private SharedViewModel sharedViewModel;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    SharedPreferences sharedPreferences;
+    private static final String PREFS_NAME = "myPrefs";
+    private static final String CHECKBOX_1_PM = "pm1";
+    private static final String CHECKBOX_2_PM = "pm2";
+    private static final String CHECKBOX_3_PM = "pm3";
+    private static final String CHECKBOX_4_PM = "pm4";
+
 
     public skills_PM_Fragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment skills_PM_Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static skills_PM_Fragment newInstance(String param1, String param2) {
-        skills_PM_Fragment fragment = new skills_PM_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
     }
 
     @Override
@@ -86,7 +69,85 @@ public class skills_PM_Fragment extends Fragment {
         cp_vid4.loadData(cpvid4,"text/html", "utf-8");
         cp_vid4.getSettings().setJavaScriptEnabled(true);
         cp_vid4.setWebChromeClient(new WebChromeClient());
-        // Inflate the layout for this fragment
+
+        pm1 = view.findViewById(R.id.checkBox);
+        pm2 = view.findViewById(R.id.checkBox2);
+        pm3 = view.findViewById(R.id.checkBox3);
+        pm4 = view.findViewById(R.id.checkBox4);
+
+        sharedPreferences = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        pm1.setChecked(sharedPreferences.getBoolean(CHECKBOX_1_PM, false));
+        pm2.setChecked(sharedPreferences.getBoolean(CHECKBOX_2_PM, false));
+        pm3.setChecked(sharedPreferences.getBoolean(CHECKBOX_3_PM, false));
+        pm4.setChecked(sharedPreferences.getBoolean(CHECKBOX_4_PM, false));
+
+        setupCheckBoxListeners(editor);
+
         return view;
+
+    }
+    private void setupCheckBoxListeners(SharedPreferences.Editor editor) {
+        pm1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editor.putBoolean(CHECKBOX_1_PM, isChecked);
+                editor.apply();
+                updateProgress();
+            }
+        });
+
+        pm2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editor.putBoolean(CHECKBOX_2_PM, isChecked);
+                editor.apply();
+                updateProgress();
+            }
+        });
+
+        pm3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editor.putBoolean(CHECKBOX_3_PM, isChecked);
+                editor.apply();
+                updateProgress();
+            }
+        });
+
+        pm4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                editor.putBoolean(CHECKBOX_4_PM, isChecked);
+                editor.apply();
+                updateProgress();
+            }
+        });
+    }
+
+    private void updateProgress() {
+        // Calculate progress based on checkbox states and update the ViewModel
+        int progress = calculateProgress();
+        sharedViewModel.updateProgressPM(progress);
+    }
+
+    private int calculateProgress() {
+        // Implement your logic to calculate progress based on checkbox states
+        // For example, if all checkboxes are checked, return 100; if half are checked, return 50, and so on.
+        // This logic depends on your specific requirements.
+        int totalCheckboxes = 4;
+        int checkedCheckboxes = 0;
+
+        if (pm1.isChecked()) checkedCheckboxes++;
+        if (pm2.isChecked()) checkedCheckboxes++;
+        if (pm3.isChecked()) checkedCheckboxes++;
+        if (pm4.isChecked()) checkedCheckboxes++;
+
+        if (totalCheckboxes > 0) {
+            return (checkedCheckboxes * 100) / totalCheckboxes;
+        } else {
+            return 0;
+        }
     }
 }

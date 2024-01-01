@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_mainPage_to_skillsPage"
             app:destination="@id/skillsPageDest" />
+        <action
+            android:id="@+id/action_mainPage_to_announcementPage"
+            app:destination="@id/announcementPageDest"/>
     </fragment>
     <fragment
         android:id="@+id/skillsPageDest"
@@ -42,6 +45,10 @@
         <action
             android:id="@+id/action_skillsPage_to_PMPage"
             app:destination="@id/PMPageDest" />
+        <action
+            android:id="@+id/action_skillsPage_to_progressPage"
+            app:destination="@id/progressPageDest" />
+
     </fragment>
     <fragment
         android:id="@+id/profilePageDest"
@@ -87,7 +94,9 @@
         android:id="@+id/CPPageDest"
         android:name="com.example.westudy.skills_CP_Fragment"
         android:label="Computer Programming"
-        tools:layout="@layout/fragment_skills__c_p_" />
+        tools:layout="@layout/fragment_skills__c_p_" >
+
+    </fragment>
     <fragment
         android:id="@+id/DAPageDest"
         android:name="com.example.westudy.skills_DA_Fragment"
@@ -103,4 +112,24 @@
         android:name="com.example.westudy.SettingFragment"
         android:label="Setting"
         tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/progressPageDest"
+        android:name="com.example.westudy.skills_progress_fragment"
+        android:label="Progress"
+        tools:layout="@layout/fragment_skills_progress" />
+
+    <fragment
+        android:id="@+id/postAnnouncementDest"
+        android:name="com.example.westudy.fragment_post_announcement"
+        android:label="fragment_announcement_post"
+        tools:layout="@layout/fragment_announcement_post" />
+    <fragment
+        android:id="@+id/announcementPageDest"
+        android:name="com.example.westudy.announcement_main_fragment"
+        android:label="fragment_annoucement_main"
+        tools:layout="@layout/fragment_annoucement_main" >
+        <action
+            android:id="@+id/action_announcementPage_to_postAnnouncement"
+            app:destination="@id/postAnnouncementDest"/>
+    </fragment>
 </navigation>

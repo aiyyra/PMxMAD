@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".SkillsPageFragment">
+
+
 
     <TextView
         android:id="@+id/textIntroHardSkill"
@@ -13,74 +16,159 @@
         android:layout_marginTop="16dp"
         android:text="Welcome to our Hard Skills Training section, where you'll find a wealth of valuable resources to boost your proficiency in a wide range of practical skills.\n\nDive in, learn, and watch your hard skills soar!"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        app:cardCornerRadius="12dp"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pic_cp"
+        android:layout_width="320dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cp"
         app:layout_constraintEnd_toEndOf="@+id/textIntroHardSkill"
         app:layout_constraintStart_toStartOf="@+id/textIntroHardSkill"
-        app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill">
+        app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill"
+        app:shapeAppearanceOverlay="@style/roundImageView"
+        tools:ignore="MissingConstraints" />
 
-        <ImageButton
-            android:id="@id/iBtnCP"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="CPbtn"
-            android:padding="0dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/image_cp" />
-    </androidx.cardview.widget.CardView>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pic_da"
+        android:layout_width="320dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/da"
+        app:layout_constraintEnd_toEndOf="@+id/pic_cp"
+        app:layout_constraintTop_toBottomOf="@+id/pic_cp"
+        app:shapeAppearanceOverlay="@style/roundImageView"
+        tools:ignore="MissingConstraints" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:layout_margin="12dp"
-        app:cardCornerRadius="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pic_pm"
+        android:layout_width="320dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/pm"
+        app:layout_constraintEnd_toEndOf="@+id/pic_da"
+        app:layout_constraintTop_toBottomOf="@+id/pic_da"
+        app:shapeAppearanceOverlay="@style/roundImageView"
+        tools:ignore="MissingConstraints" />
 
-        <ImageButton
-            android:id="@id/iBtnDA"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="DAbtn"
-            android:padding="0dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/image_da" />
-    </androidx.cardview.widget.CardView>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/roundRectangle"
+        android:layout_width="wrap_content"
+        android:layout_height="119dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Enter Computer Programming Section"
+        android:adjustViewBounds="true"
+        android:alpha=".65"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="computerProgramming"
+        android:scaleType="fitCenter"
+        android:src="@drawable/red_rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/textIntroHardSkill"
+        app:layout_constraintStart_toStartOf="@+id/textIntroHardSkill"
+        app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill"
+        app:shapeAppearanceOverlay="@style/roundImageView"
+        tools:ignore="MissingConstraints" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:layout_margin="12dp"
-        app:cardCornerRadius="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView3"
-        app:layout_constraintStart_toStartOf="@+id/cardView3"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/roundRectangle2"
+        android:layout_width="320dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="Enter Data Analysis Section"
+        android:alpha=".65"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="dataAnalysis"
+        android:scaleType="fitCenter"
+        android:src="@drawable/red_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pic_cp"
+        app:shapeAppearanceOverlay="@style/roundImageView"
+        tools:ignore="MissingConstraints" />
 
-        <ImageButton
-            android:id="@id/iBtnPM"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="PMbtn"
-            android:padding="0dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/image_pm" />
-    </androidx.cardview.widget.CardView>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/roundRectangle3"
+        android:layout_width="320dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="Enter Project Management Section"
+        android:alpha=".65"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="projectManagement"
+        android:scaleType="fitCenter"
+        android:src="@drawable/red_rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/pic_da"
+        app:layout_constraintTop_toBottomOf="@+id/pic_da"
+        app:shapeAppearanceOverlay="@style/roundImageView"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textCp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COMPUTER PROGRAMMING"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pic_cp"
+        app:layout_constraintEnd_toEndOf="@+id/pic_cp"
+        app:layout_constraintStart_toStartOf="@+id/pic_cp"
+        app:layout_constraintTop_toTopOf="@+id/pic_cp" />
+
+    <TextView
+        android:id="@+id/textDs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DATA ANALYSIS"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pic_da"
+        app:layout_constraintEnd_toEndOf="@+id/pic_da"
+        app:layout_constraintStart_toStartOf="@+id/pic_da"
+        app:layout_constraintTop_toTopOf="@+id/pic_da" />
+
+    <TextView
+        android:id="@+id/textPm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PROJECT MANAGEMENT"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/pic_pm"
+        app:layout_constraintEnd_toEndOf="@+id/pic_pm"
+        app:layout_constraintStart_toStartOf="@+id/pic_pm"
+        app:layout_constraintTop_toTopOf="@+id/pic_pm" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BtnProgress"
+        android:text="        MY PROGRESS        "
+        android:background="#ECDBBA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pic_pm"
+        android:layout_marginTop="20dp"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
