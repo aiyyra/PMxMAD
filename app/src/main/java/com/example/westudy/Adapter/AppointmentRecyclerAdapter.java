@@ -18,13 +18,13 @@ import com.example.westudy.R;
 
 import java.util.ArrayList;
 
-public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.MyViewHolder> {
+public class AppointmentRecyclerAdapter extends RecyclerView.Adapter<AppointmentRecyclerAdapter.MyViewHolder> {
 
     private OnRemoveClickListener removeClickListener;
 
     Context context;
     ArrayList <Appointment> appointmentArrayList;
-    public AppointmentAdapter(Context context, ArrayList<Appointment> appointmentArrayList) {
+    public AppointmentRecyclerAdapter(Context context, ArrayList<Appointment> appointmentArrayList) {
         this.context = context;
         this.appointmentArrayList = appointmentArrayList;
     }
