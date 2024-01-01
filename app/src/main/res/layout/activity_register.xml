@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".Register">
+    tools:context=".RegisterModule.Register">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -94,12 +94,12 @@
                 android:id="@+id/BtnRegister"
                 android:layout_width="220dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="44dp"
                 android:backgroundTint="#C84B31"
                 android:text="Register"
                 app:cornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="@+id/ETPassword"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toStartOf="@+id/ETPassword"
                 app:layout_constraintTop_toBottomOf="@+id/ETPassword" />
 
