@@ -176,9 +176,6 @@ public class skills_progress_fragment extends Fragment {
                 dialog.show();
             }
         });
-
-
-
         return view;
     }
 

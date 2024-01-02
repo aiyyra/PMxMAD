@@ -26,19 +26,28 @@
         android:layout_marginStart="8dp"
         android:text="Username"
         android:textSize="20sp"
-        android:fontFamily="@font/inter_bold"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/IVTempProfilePic"
         app:layout_constraintStart_toEndOf="@id/IVTempProfilePic"
         app:layout_constraintTop_toTopOf="@+id/IVTempProfilePic"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/TVEmail"
+        android:id="@+id/TVRecentChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="description"
-        android:fontFamily="@font/inter_medium"
+        android:text="Recent chat"
         app:layout_constraintStart_toStartOf="@+id/TVUsername"
         app:layout_constraintTop_toBottomOf="@+id/TVUsername" />
+
+    <TextView
+        android:id="@+id/TVRecentMessageTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:text="10.00"
+        app:layout_constraintBottom_toBottomOf="@+id/TVUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TVUsername" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

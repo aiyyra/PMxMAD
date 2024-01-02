@@ -15,6 +15,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/IBtnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/back_icon"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/editText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editText"
+            app:tint="@color/colorPrimary" />
         <EditText
             android:id="@+id/ETSearchUser"
             android:layout_width="wrap_content"
@@ -22,7 +34,6 @@
             android:layout_margin="12dp"
             android:layout_weight="1"
             android:hint="search name"
-            android:fontFamily="@font/inter_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,5 +60,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        tools:listitem="@layout/individual_chat_recent"/>
+        tools:listitem="@layout/individual_chat_view"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

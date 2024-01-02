@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.westudy.ChatPersonal;
 import com.example.westudy.Model.UserModel;
 import com.example.westudy.R;
+import com.example.westudy.Utils.AndroidUtil;
+import com.example.westudy.Utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
@@ -34,14 +36,18 @@ public class SearchUserRecyclerAdapter extends FirestoreRecyclerAdapter<UserMode
 
     @Override
     protected void onBindViewHolder(@NonNull UserModelViewHolder holder, int position, @NonNull UserModel model) {
+        holder.username.setText(model.getUsername());
         holder.email.setText(model.getEmail());
+        if(model.getUserID().equals(FirebaseUtil.currentUserID())){
+            holder.username.setText(model.getUsername()+"(ME)");
+        }
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ChatPersonal.class);
-            intent.putExtra("email", model.getEmail());
-            intent.putExtra("userID", model.getUserID());
+            AndroidUtil.passUserModelAsIntent(intent,model);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
+
         });
     }
 
@@ -54,13 +60,14 @@ public class SearchUserRecyclerAdapter extends FirestoreRecyclerAdapter<UserMode
 
     class UserModelViewHolder extends RecyclerView.ViewHolder{
 
-        TextView email;
+        TextView email,username;
         ImageView profilePic;
 
         public UserModelViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            email = itemView.findViewById(R.id.TVUsername);
+            username = itemView.findViewById(R.id.TVUsername);
+            email = itemView.findViewById(R.id.TVEmail);
             profilePic = itemView.findViewById(R.id.IVTempProfilePic);
         }
     }
