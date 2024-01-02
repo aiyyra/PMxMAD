@@ -1,4 +1,4 @@
-package com.example.westudy;
+package com.example.westudy.RegisterModule;
 
 import static android.content.ContentValues.TAG;
 
@@ -15,13 +15,11 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.westudy.Model.UserModel;
+import com.example.westudy.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
 
@@ -82,7 +80,8 @@ public class Register extends AppCompatActivity {
 //                                    FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(Register.this, "Account created.",
                                             Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(getApplicationContext(), Login.class);
+                                                Intent intent = new Intent(getApplicationContext(), UserSetup.class);
+                                                intent.putExtra("email",email);
                                                 startActivity(intent);
                                                 finish();
                                 } else {

@@ -1,4 +1,4 @@
-package com.example.westudy;
+package com.example.westudy.RegisterModule;
 
 import static android.content.ContentValues.TAG;
 
@@ -15,7 +15,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.westudy.MainPage;
 import com.example.westudy.Model.UserModel;
+import com.example.westudy.R;
 import com.example.westudy.Utils.FirebaseUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -99,7 +101,8 @@ public class Login extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getCurrentUser();
 
                                     getUser();
-                                    setUser();
+//                                    setUser();
+                                    login();
 
                                 } else {
                                     // If sign in fails, display a message to the user.
@@ -126,19 +129,19 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    public void setUser() {
-        if(userModel==null){
-            userModel = new UserModel(email, Timestamp.now(),FirebaseUtil.currentUserID());
-        }
-        FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    login();
-                }
-            }
-        });
-    }
+//    public void setUser() {
+//        if(userModel==null){
+//            userModel = new UserModel(email, Timestamp.now(),FirebaseUtil.currentUserID());
+//        }
+//        FirebaseUtil.currentUserDetails().set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                if (task.isSuccessful()){
+//                    login();
+//                }
+//            }
+//        });
+//    }
 
     public void login(){
         Toast.makeText(getApplicationContext(),"Login Successfully",Toast.LENGTH_SHORT).show();

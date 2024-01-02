@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,13 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.Light.NoActionBar"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ChatSearchUser"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterModule.UserSetup"
+            android:exported="false" />
         <activity
             android:name=".ChatPersonal"
-            android:exported="false" />
-        <!-- Used to use theme.WeStudy -->
+            android:exported="false" /> <!-- Used to use theme.WeStudy -->
         <activity
-            android:name=".Login"
+            android:name=".RegisterModule.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,9 +33,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         <activity
-         android:name=".Register"
-         android:exported="false" />
+        <activity
+            android:name=".RegisterModule.Register"
+            android:exported="false" />
         <activity
             android:name=".MainPage"
             android:exported="false" />
