@@ -27,15 +27,12 @@
         <action
             android:id="@+id/action_mainPage_to_skillsPage"
             app:destination="@id/skillsPageDest" />
-<<<<<<< HEAD
         <action
             android:id="@+id/action_mainPage_to_coursePage"
             app:destination="@id/courseMainFragment" />
         <action
             android:id="@+id/action_mainPageDest_to_announcementMainFragment"
             app:destination="@id/announcementMainFragment" />
-=======
->>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
     </fragment>
     <fragment
         android:id="@+id/skillsPageDest"
@@ -147,7 +144,6 @@
         android:label="Progress"
         tools:layout="@layout/fragment_skills_progress" />
 
-<<<<<<< HEAD
     <fragment
         android:id="@+id/announcementMainFragment"
         android:name="com.example.westudy.AnnouncementMainFragment"
@@ -162,6 +158,4 @@
         android:name="com.example.westudy.AnnouncementPostFragment"
         android:label="Post Announcement"
         tools:layout="@layout/fragment_announcement_post" />
-=======
->>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
 </navigation>

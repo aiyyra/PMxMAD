@@ -163,7 +163,6 @@ public class MainPageFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_PMPage);
             }
         });
-<<<<<<< HEAD
 
         //Announcement
         viewAnnouncement.setOnClickListener(new View.OnClickListener() {
@@ -172,15 +171,5 @@ public class MainPageFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_mainPageDest_to_announcementMainFragment);
             }
         });
-=======
-//
-//        //Announcement
-//        TVAnnouncementTitle.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_announcementPage);
-//            }
-//        });
->>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
     }
 }
