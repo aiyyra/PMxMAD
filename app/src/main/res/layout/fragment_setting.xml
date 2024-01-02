@@ -6,13 +6,9 @@
     android:orientation="vertical"
     tools:context=".ChemistryFragment">
 <!--may also use list view-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Setting Page"
-        android:textSize="35sp" />
 
     <LinearLayout
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
