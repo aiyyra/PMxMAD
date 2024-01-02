@@ -11,8 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.westudy.Model.UserModel;
 import com.example.westudy.RegisterModule.Login;
+import com.example.westudy.Utils.FirebaseUtil;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
@@ -60,21 +63,29 @@ public class ProfileFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    Button BtnLogout;
+    TextView username,email;
+    UserModel currentUserModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        BtnLogout = view.findViewById(R.id.BtnLogout);
+        username = view.findViewById(R.id.TVProfileUsername);
+        email = view.findViewById(R.id.TVProfileEmail);
+
+        getUserData();
+
+        return view;
     }
 
-    Button BtnLogout;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        BtnLogout = view.findViewById(R.id.BtnLogout);
 
         BtnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,5 +96,15 @@ public class ProfileFragment extends Fragment {
                 getActivity().finish();
             }
         });
+    }
+
+    void getUserData(){
+        FirebaseUtil.currentUserDetails().get().addOnCompleteListener(task -> {
+            currentUserModel = task.getResult().toObject(UserModel.class);
+
+            username.setText(currentUserModel.getUsername());
+            email.setText(currentUserModel.getEmail());
+        });
+
     }
 }
