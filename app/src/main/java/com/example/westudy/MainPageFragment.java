@@ -1,17 +1,17 @@
 package com.example.westudy;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,7 +65,7 @@ public class MainPageFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main_page, container, false);
     }
-
+    Button viewSkills,viewCourse,viewAnnouncement;
     TextView TVSkillsTitle, TVAnnouncementTitle;
     ImageButton iBtnChem,iBtnEng,iBtnPhy,iBtnMath,iBtnBio;
     ImageButton iBtnCP,iBtnDA,iBtnPM;
@@ -87,8 +87,9 @@ public class MainPageFragment extends Fragment {
         iBtnBio = view.findViewById(R.id.iBtnBio);
         ///////////////////////
         ///////////////////////
-        TVSkillsTitle = view.findViewById(R.id.TVSkillsTitle);
-        TVAnnouncementTitle = view.findViewById(R.id.TVAnnouncementTitle);
+        viewSkills = view.findViewById(R.id.btnViewSkill);
+        viewCourse = view.findViewById(R.id.btnViewCourse);
+        viewAnnouncement = view.findViewById(R.id.btnViewAnnouncement);
         iBtnCP = view.findViewById(R.id.iBtnCP);
         iBtnDA = view.findViewById(R.id.iBtnDA);
         iBtnPM = view.findViewById(R.id.iBtnPM);
@@ -129,13 +130,18 @@ public class MainPageFragment extends Fragment {
         });
         ///////////////////////
         ///////////////////////Skills Section//////////////////////
-        TVSkillsTitle.setOnClickListener(new View.OnClickListener() {
+        viewSkills.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_mainPage_to_skillsPage);
             }
         });
-
+        viewCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_coursePage);
+            }
+        });
         iBtnCP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,6 +163,16 @@ public class MainPageFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_PMPage);
             }
         });
+<<<<<<< HEAD
+
+        //Announcement
+        viewAnnouncement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPageDest_to_announcementMainFragment);
+            }
+        });
+=======
 //
 //        //Announcement
 //        TVAnnouncementTitle.setOnClickListener(new View.OnClickListener() {
@@ -165,5 +181,6 @@ public class MainPageFragment extends Fragment {
 //                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_announcementPage);
 //            }
 //        });
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
     }
 }

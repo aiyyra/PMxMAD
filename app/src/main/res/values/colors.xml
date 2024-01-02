@@ -6,6 +6,7 @@
     <color name="blue">#2D4263</color>
     <color name="cream">#ECDBBA</color>
     <color name="silver">#d9d9d9</color>
+    <color name="transparent">@android:color/transparent</color>
 
     <color name="colorPrimary">#2D4263</color>
     <color name="colorAccent">#ECDBBA</color>

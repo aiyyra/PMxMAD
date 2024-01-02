@@ -27,6 +27,15 @@
         <action
             android:id="@+id/action_mainPage_to_skillsPage"
             app:destination="@id/skillsPageDest" />
+<<<<<<< HEAD
+        <action
+            android:id="@+id/action_mainPage_to_coursePage"
+            app:destination="@id/courseMainFragment" />
+        <action
+            android:id="@+id/action_mainPageDest_to_announcementMainFragment"
+            app:destination="@id/announcementMainFragment" />
+=======
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
     </fragment>
     <fragment
         android:id="@+id/skillsPageDest"
@@ -50,7 +59,7 @@
     <fragment
         android:id="@+id/profilePageDest"
         android:name="com.example.westudy.ProfileFragment"
-        android:label="Profile"
+        android:label="User Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/chatPageDest"
@@ -107,12 +116,52 @@
     <fragment
         android:id="@+id/settingPageDest"
         android:name="com.example.westudy.SettingFragment"
-        android:label="Setting"
+        android:label="Settings"
         tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/courseMainFragment"
+        android:name="com.example.westudy.CourseMainFragment"
+        android:label="Courses"
+        tools:layout="@layout/fragment_course_main" >
+        <action
+            android:id="@+id/action_courseMainFragment_to_appointmentMainFragment"
+            app:destination="@id/appointmentMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentMainFragment"
+        android:name="com.example.westudy.AppointmentMainFragment"
+        android:label="Your Appointment"
+        tools:layout="@layout/fragment_appointment_main" >
+        <action
+            android:id="@+id/action_appointmentMainFragment_to_bookAppointmentFragment"
+            app:destination="@id/bookAppointmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookAppointmentFragment"
+        android:name="com.example.westudy.BookAppointmentFragment"
+        android:label="Book Appointment"
+        tools:layout="@layout/fragment_book_appointment" />
     <fragment
         android:id="@+id/progressPageDest"
         android:name="com.example.westudy.skills_progress_fragment"
         android:label="Progress"
         tools:layout="@layout/fragment_skills_progress" />
 
+<<<<<<< HEAD
+    <fragment
+        android:id="@+id/announcementMainFragment"
+        android:name="com.example.westudy.AnnouncementMainFragment"
+        android:label="Announcement"
+        tools:layout="@layout/fragment_announcement_main" >
+        <action
+            android:id="@+id/action_announcementMainFragment_to_announcementPostFragment"
+            app:destination="@id/announcementPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/announcementPostFragment"
+        android:name="com.example.westudy.AnnouncementPostFragment"
+        android:label="Post Announcement"
+        tools:layout="@layout/fragment_announcement_post" />
+=======
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
 </navigation>

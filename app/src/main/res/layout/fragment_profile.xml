@@ -7,15 +7,25 @@
     tools:context=".ProfileFragment">
 
     <ImageView
+<<<<<<< HEAD
+        android:id="@+id/imageView"
+        android:layout_width="94dp"
+        android:layout_height="95dp"
+=======
         android:id="@+id/IVProfilePic"
         android:layout_width="200dp"
         android:layout_height="200dp"
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
         android:layout_marginTop="104dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
+        app:srcCompat="@drawable/baseline_person_24" />
+=======
         app:srcCompat="@drawable/baseline_account_circle_24" />
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -33,7 +43,11 @@
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:scaleType="centerInside"
+<<<<<<< HEAD
+            app:srcCompat="@drawable/baseline_person_24"  />
+=======
             android:src="@drawable/temp_profilepic" />
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
 
         <TextView
             android:id="@+id/TVProfileUsername"
@@ -41,6 +55,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
+            android:fontFamily="@font/inter_medium"
             android:text="Name" />
     </LinearLayout>
 
@@ -55,6 +70,23 @@
 <!--        app:layout_constraintStart_toStartOf="@+id/linearLayout2"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">-->
 
+<<<<<<< HEAD
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/baseline_smartphone_24"  />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Phone no"
+            android:fontFamily="@font/inter_medium"/>
+    </LinearLayout>
+=======
 <!--        <ImageView-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="match_parent"-->
@@ -70,6 +102,7 @@
 <!--            android:gravity="center_vertical"-->
 <!--            android:text="Phone no" />-->
 <!--    </LinearLayout>-->
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -87,7 +120,11 @@
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:scaleType="centerInside"
+<<<<<<< HEAD
+            app:srcCompat="@drawable/baseline_email_24"  />
+=======
             app:srcCompat="@android:drawable/ic_dialog_email" />
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
 
         <TextView
             android:id="@+id/TVProfileEmail"
@@ -95,7 +132,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Email" />
+            android:text="Email"
+            android:fontFamily="@font/inter_medium"/>
     </LinearLayout>
 
     <Button
@@ -104,6 +142,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:text="Logout"
+        android:fontFamily="@font/inter_medium"
+        android:backgroundTint="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/IVProfilePic"
         app:layout_constraintHorizontal_bias="0.504"

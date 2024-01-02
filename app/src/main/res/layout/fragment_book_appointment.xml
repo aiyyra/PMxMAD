@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookAppointmentFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/TVDateTitleAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Select Date :"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Radio group for slots selection-->
+
+        <TextView
+            android:id="@+id/TVMessageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Message to Teacher :"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/TVDateTitleAdd"
+            app:layout_constraintTop_toBottomOf="@+id/TVTeacherTitle" />
+
+        <TextView
+            android:id="@+id/TVCoursesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Select Course :"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnDatePicker" />
+
+        <TextView
+            android:id="@+id/TVTeacherTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="436dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Select Teacher :"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/TVDateTitleAdd"
+            app:layout_constraintTop_toBottomOf="@+id/TVDateTitleAdd" />
+
+        <TextView
+            android:id="@+id/TVDate"
+            android:layout_width="169dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:fontFamily="@font/inter_medium"
+            android:minHeight="48dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/TVDateTitleAdd"
+            app:layout_constraintTop_toTopOf="@+id/TVDateTitleAdd" />
+
+        <Button
+            android:id="@+id/BtnSubmitAppointment"
+            android:layout_width="219dp"
+            android:layout_height="51dp"
+            android:layout_margin="@dimen/big_padding"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/inter_medium"
+            android:text="Submit Appointment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ETMessage"
+            app:layout_constraintTop_toBottomOf="@+id/ETMessage" />
+
+        <Button
+            android:id="@+id/BtnDatePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/big_padding"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/inter_medium"
+            android:text="Open Date Picker"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/TVDateTitleAdd"
+            app:layout_constraintTop_toBottomOf="@+id/TVDate" />
+
+        <RadioGroup
+            android:id="@+id/RGSlots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/TVSlotsTitle"
+            app:layout_constraintStart_toStartOf="@+id/TVSlotsTitle"
+            app:layout_constraintTop_toBottomOf="@+id/TVSlotsTitle">
+
+            <RadioButton
+                android:id="@+id/RB11_00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_11_00_am"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RB11_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_11_30_am"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RB12_00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_12_00_pm"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+            <RadioButton
+                android:id="@+id/RB12_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_12_30_pm"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RB2_00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_2_00_pm"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RB2_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/_2_30_pm"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/RGCourses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="18dp"
+            app:layout_constraintEnd_toEndOf="@+id/TVCoursesTitle"
+            app:layout_constraintStart_toStartOf="@+id/TVCoursesTitle"
+            app:layout_constraintTop_toBottomOf="@+id/TVCoursesTitle">
+
+            <RadioButton
+                android:id="@+id/RBChemistry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Chemistry"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RBEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="English"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RBGeography"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Geography"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RBPhysics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Physics"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RBMaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Maths"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/RBBiology"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:text="Biology"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/ETMessage"
+            android:layout_width="370dp"
+            android:layout_height="141dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Type your message here(if needed)..."
+            android:background="@color/cream"
+            android:fontFamily="@font/inter_medium"
+            android:inputType="textMultiLine"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/TVMessageTitle"
+            app:layout_constraintTop_toBottomOf="@+id/TVMessageTitle" />
+
+        <TextView
+            android:id="@+id/TVSlotsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Select Slot :"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnDatePicker" />
+
+        <Spinner
+            android:id="@+id/spinner_teacher"
+            android:layout_width="300dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TVTeacherTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

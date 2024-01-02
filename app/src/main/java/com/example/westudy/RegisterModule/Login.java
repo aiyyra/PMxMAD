@@ -2,9 +2,6 @@ package com.example.westudy.RegisterModule;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,7 +12,13 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+<<<<<<< HEAD:app/src/main/java/com/example/westudy/Login.java
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+=======
 import com.example.westudy.MainPage;
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8:app/src/main/java/com/example/westudy/RegisterModule/Login.java
 import com.example.westudy.Model.UserModel;
 import com.example.westudy.R;
 import com.example.westudy.Utils.FirebaseUtil;
@@ -112,9 +115,6 @@ public class Login extends AppCompatActivity {
                                 }
                             }
                         });
-
-
-
             }
         });
     }

@@ -9,11 +9,20 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo_app"
+        android:icon="@drawable/logoapp"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.Light.NoActionBar"
+<<<<<<< HEAD
+        tools:targetApi="31"> <!-- Used to use theme.WeStudy -->
+
+        <!-- Used to use theme.WeStudy -->
+
+        <activity
+            android:name=".ChatPersonal"
+            android:exported="false" />
+=======
         tools:targetApi="31">
         <activity
             android:name=".ChatSearchUser"
@@ -24,6 +33,7 @@
         <activity
             android:name=".ChatPersonal"
             android:exported="false" /> <!-- Used to use theme.WeStudy -->
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
         <activity
             android:name=".RegisterModule.Login"
             android:exported="true">
@@ -32,10 +42,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity> <!-- <activity -->
+        <!-- android:name=".SkillsPage" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".Register"
+            android:exported="false" >
         </activity>
+<<<<<<< HEAD
+=======
         <activity
             android:name=".RegisterModule.Register"
             android:exported="false" />
+>>>>>>> 008fa6b95cd372706a2fc736c98306077f07ecc8
         <activity
             android:name=".MainPage"
             android:exported="false" />
