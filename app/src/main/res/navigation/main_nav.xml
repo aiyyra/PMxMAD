@@ -64,11 +64,6 @@
         android:label="Chat"
         tools:layout="@layout/fragment_chat" />
     <fragment
-        android:id="@+id/notificationPageDest"
-        android:name="com.example.westudy.NotificationFragment"
-        android:label="Notification"
-        tools:layout="@layout/fragment_notification" />
-    <fragment
         android:id="@+id/chemPageDest"
         android:name="com.example.westudy.ChemistryFragment"
         android:label="Chemistry"
