@@ -157,13 +157,13 @@ public class MainPageFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_PMPage);
             }
         });
-
-        //Announcement
-        TVAnnouncementTitle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_announcementPage);
-            }
-        });
+//
+//        //Announcement
+//        TVAnnouncementTitle.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_announcementPage);
+//            }
+//        });
     }
 }
