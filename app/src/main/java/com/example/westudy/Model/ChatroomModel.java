@@ -8,7 +8,15 @@ public class ChatroomModel {
     String chatroomID;
     List<String> userIds;
     Timestamp lastMessageTimestamp;
-    String lastMessageSenderId;
+    String lastMessageSenderId,lastMessage;
+
+    public String getLastMessage() {
+        return lastMessage;
+    }
+
+    public void setLastMessage(String lastMessage) {
+        this.lastMessage = lastMessage;
+    }
 
     public ChatroomModel(String chatroomID, List<String> userIds, Timestamp lastMessageTimestamp, String lastMessageSenderId) {
         this.chatroomID = chatroomID;

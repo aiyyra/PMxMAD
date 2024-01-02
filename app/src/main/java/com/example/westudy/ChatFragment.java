@@ -1,5 +1,6 @@
 package com.example.westudy;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +13,9 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.example.westudy.Adapter.RecentChatRecyclerAdapter;
 import com.example.westudy.Adapter.SearchUserRecyclerAdapter;
+import com.example.westudy.Model.ChatroomModel;
 import com.example.westudy.Model.UserModel;
 import com.example.westudy.Utils.FirebaseUtil;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -29,7 +32,7 @@ public class ChatFragment extends Fragment {
     ImageButton IBSearchButton;
     RecyclerView RVUserList;
 
-    SearchUserRecyclerAdapter adapter;
+    RecentChatRecyclerAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,26 +80,31 @@ public class ChatFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_chat, container, false);
         initView(view);
-        setupSearchRecyclerView("");
 
         IBSearchButton.setOnClickListener( v -> {
-            String searchTerm = ETSearchUser.getText().toString();
-            setupSearchRecyclerView(searchTerm);
+            Intent intent = new Intent(getActivity().getApplicationContext(), ChatSearchUser.class);
+            startActivity(intent);
+        });
+        ETSearchUser.setOnClickListener( v -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(), ChatSearchUser.class);
+            startActivity(intent);
         });
 
+        setupRecyclerView();
 
         return view;
     }
 
-    void setupSearchRecyclerView(String searchTerm) {
+    void setupRecyclerView() {
 
-        Query query = FirebaseUtil.allUserCollectionReference()
-                .whereGreaterThanOrEqualTo("email",searchTerm);
+        Query query = FirebaseUtil.allChatroomCollectionReference()
+                .whereArrayContains("userIds",FirebaseUtil.currentUserID())
+                .orderBy("lastMessageTimestamp", Query.Direction.DESCENDING);
 
-        FirestoreRecyclerOptions<UserModel> options = new FirestoreRecyclerOptions.Builder<UserModel>()
-                .setQuery(query, UserModel.class).build();
+        FirestoreRecyclerOptions<ChatroomModel> options = new FirestoreRecyclerOptions.Builder<ChatroomModel>()
+                .setQuery(query, ChatroomModel.class).build();
 
-        adapter = new SearchUserRecyclerAdapter(options,getActivity().getApplicationContext());
+        adapter = new RecentChatRecyclerAdapter(options,getContext());//might change here
         RVUserList.setLayoutManager(new LinearLayoutManager(getContext()));
         RVUserList.setAdapter(adapter);
         adapter.startListening();
@@ -107,6 +115,22 @@ public class ChatFragment extends Fragment {
         super.onStart();
         if(adapter!=null){
             adapter.startListening();
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(adapter!=null){
+            adapter.stopListening();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(adapter!=null){
+            adapter.notifyDataSetChanged();
         }
     }
 

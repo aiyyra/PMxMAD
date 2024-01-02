@@ -102,6 +102,7 @@ public class Login extends AppCompatActivity {
 
                                     getUser();
 //                                    setUser();
+                                    login();
 
                                 } else {
                                     // If sign in fails, display a message to the user.

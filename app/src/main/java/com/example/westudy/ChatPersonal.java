@@ -2,6 +2,7 @@ package com.example.westudy;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -58,7 +59,7 @@ public class ChatPersonal extends AppCompatActivity {
             onBackPressed();
         });
 
-        TVOtherUsername.setText(otherUser.getEmail().toString());
+        TVOtherUsername.setText(otherUser.getUsername().toString());
 
         IBtnSendMessage.setOnClickListener(v -> {
             String message = ETMessageInput.getText().toString().trim();
@@ -100,6 +101,7 @@ public class ChatPersonal extends AppCompatActivity {
 
         chatroomModel.setLastMessageTimestamp(Timestamp.now());
         chatroomModel.setLastMessageSenderId(FirebaseUtil.currentUserID());
+        chatroomModel.setLastMessage(message);
         FirebaseUtil.getChatroomReference(chatroomId).set(chatroomModel);
 
         ChatMessageModel chatMessageModel = new ChatMessageModel(message,FirebaseUtil.currentUserID(),Timestamp.now());
