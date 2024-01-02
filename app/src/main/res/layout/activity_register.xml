@@ -4,51 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    android:background="#000000"
+    tools:context=".RegisterModule.Register">
 
-    <EditText
-        android:id="@+id/ETEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="196dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/ETPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="@+id/ETEmail"
-        app:layout_constraintTop_toBottomOf="@+id/ETEmail" />
-
-    <Button
-        android:id="@+id/BtnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="84dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="@+id/ETPassword"
-        app:layout_constraintTop_toBottomOf="@+id/ETPassword" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:text="Register"
-        app:layout_constraintBottom_toTopOf="@+id/ETEmail"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="334dp"
+        android:layout_height="562dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintVertical_bias="0.298">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/LoginFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_frame">
+
+            <TextView
+                android:id="@+id/TVProjectName"
+                android:layout_width="309dp"
+                android:layout_height="109dp"
+                android:background="@drawable/logo_westudy"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.194"
+                />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Register"
+                android:textColor="@color/silver"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/TVProjectName"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="@+id/TVProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/TVProjectName" />
+
+            <EditText
+                android:id="@id/ETEmail"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="225dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/button_layout"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:textColorHint="#ECDBBA"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/TVProjectName"
+                app:layout_constraintStart_toStartOf="@+id/TVProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <EditText
+                android:id="@id/ETPassword"
+                android:layout_width="225dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_layout"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingStart="20dp"
+                android:textColorHint="#ECDBBA"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/ETEmail"
+                app:layout_constraintStart_toStartOf="@+id/ETEmail"
+                app:layout_constraintTop_toBottomOf="@+id/ETEmail" />
+
+            <ProgressBar
+                android:id="@id/progressBar"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/BtnRegister"
+                android:layout_width="220dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="#C84B31"
+                android:text="Register"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/ETPassword"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="@+id/ETPassword"
+                app:layout_constraintTop_toBottomOf="@+id/ETPassword" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -59,12 +116,16 @@
 
     <Button
         android:id="@+id/BtnClickLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="76dp"
-        android:text="Click to Login"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BtnRegister" />
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#ECDBBA"
+        android:text="Back to Login Page"
+        android:textColor="#2D4263"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.393" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

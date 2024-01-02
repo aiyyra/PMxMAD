@@ -4,15 +4,24 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-    <style name="Theme.Westudy" parent="Base.Theme.Westudy" >
-        <item name="android:statusBarColor">
-            @android:color/transparent
-        </item>
-    </style>
-    <style name="roundimageview" parent="">
 
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">10dp</item>
-        <item name="color">@color/white</item>
+    <!-- Define toolbar text appearances -->
+    <style name="TextAppearanceToolbar">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <!-- Add other attributes as needed for headline 1 -->
     </style>
+    <!-- Define bottom bar text appearances -->
+    <style name="TextAppearanceBottomBar">
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <!-- Add other attributes as needed for headline 1 -->
+    </style>
+
+    <style name="Theme.Westudy" parent="Base.Theme.Westudy" />
+
+
+    <style name="roundImageView" parent="">
+        <item name="cornerFamily">rounded</item>    <item name="cornerSize">10dp</item>
+        <item name="color">@color/white</item></style>
 </resources>

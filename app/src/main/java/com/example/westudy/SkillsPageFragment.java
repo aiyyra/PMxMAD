@@ -1,64 +1,90 @@
 package com.example.westudy;
 
+import android.media.Image;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SkillsPageFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.material.imageview.ShapeableImageView;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+
+
 public class SkillsPageFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public SkillsPageFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SkillsPageFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SkillsPageFragment newInstance(String param1, String param2) {
-        SkillsPageFragment fragment = new SkillsPageFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
+
         return inflater.inflate(R.layout.fragment_skills_page, container, false);
+
+    }
+
+    ShapeableImageView iBtnCP,iBtnDA,iBtnPM;
+    AppCompatButton btnProgress;
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        initializeView(view);
+        setBtnAction(view);
+    }
+
+    public void initializeView(View view){
+        iBtnCP = view.findViewById(R.id.roundRectangle);
+        iBtnDA = view.findViewById(R.id.roundRectangle2);
+        iBtnPM = view.findViewById(R.id.roundRectangle3);
+        btnProgress = view.findViewById(R.id.BtnProgress);
+    }
+
+    public void setBtnAction(View view){
+        iBtnCP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_CPPage);
+            }
+        });
+        iBtnDA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_DAPage);
+            }
+        });
+        iBtnPM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_PMPage);
+            }
+        });
+
+        btnProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_progressPage);
+            }
+        });
     }
 }
+
+
+

@@ -3,7 +3,7 @@
     <item
         android:id="@id/mainPageDest"
         android:icon="@drawable/menu_home"
-        android:title="Menu"/>
+        android:title="Home"/>
     <item
         android:id="@id/chatPageDest"
         android:icon="@drawable/menu_chat"
@@ -13,14 +13,7 @@
         android:icon="@drawable/menu_profile"
         android:title="Profile"/>
     <item
-        android:id="@id/notificationPageDest"
-        android:icon="@drawable/menu_notification"
-        android:title="notification"/>
-    <item
-        android:id="@id/skillsPageDest"
+        android:id="@id/settingPageDest"
         android:icon="@drawable/menu_settings"
-        android:title="Skills"/>
-<!--    we may remove the skills page option in menu-->
+        android:title="Settings"/>
 </menu>
-<!--change icon, add id-->
-<!--Add more items ex:- announcement, profile page, chat-->

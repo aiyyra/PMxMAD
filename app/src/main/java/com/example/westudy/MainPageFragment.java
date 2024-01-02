@@ -1,12 +1,17 @@
 package com.example.westudy;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,11 +59,117 @@ public class MainPageFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main_page, container, false);
+    }
+    Button viewSkills,viewCourse,viewAnnouncement;
+    TextView TVSkillsTitle, TVAnnouncementTitle;
+    ImageButton iBtnChem,iBtnEng,iBtnPhy,iBtnMath,iBtnBio;
+    ImageButton iBtnCP,iBtnDA,iBtnPM;
+    TextView viewAllSkills;
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        initializeView(view);
+        setBtnAction(view);
+    }
+
+    public  void initializeView(View view){
+        iBtnChem = view.findViewById(R.id.iBtnChem);
+        iBtnEng = view.findViewById(R.id.iBtnEng);
+
+        iBtnPhy = view.findViewById(R.id.iBtnPhy);
+        iBtnMath = view.findViewById(R.id.iBtnMath);
+        iBtnBio = view.findViewById(R.id.iBtnBio);
+        ///////////////////////
+        ///////////////////////
+        viewSkills = view.findViewById(R.id.btnViewSkill);
+        viewCourse = view.findViewById(R.id.btnViewCourse);
+        viewAnnouncement = view.findViewById(R.id.btnViewAnnouncement);
+        iBtnCP = view.findViewById(R.id.iBtnCP);
+        iBtnDA = view.findViewById(R.id.iBtnDA);
+        iBtnPM = view.findViewById(R.id.iBtnPM);
+
+    }
+
+    public void setBtnAction(View view){
+        iBtnChem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_chemPage);
+            }
+        });
+        iBtnEng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_engPage);
+            }
+        });
+//        another button here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        iBtnPhy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_phyPage);
+            }
+        });
+        iBtnMath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_mathPage);
+            }
+        });
+        iBtnBio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_bioPage);
+            }
+        });
+        ///////////////////////
+        ///////////////////////Skills Section//////////////////////
+        viewSkills.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_skillsPage);
+            }
+        });
+        viewCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_coursePage);
+            }
+        });
+        iBtnCP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_skillsPage);
+                Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_CPPage);
+            }
+        });
+        iBtnDA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_skillsPage);
+                Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_DAPage);
+            }
+        });
+        iBtnPM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_skillsPage);
+                Navigation.findNavController(view).navigate(R.id.action_skillsPage_to_PMPage);
+            }
+        });
+
+        //Announcement
+        viewAnnouncement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPageDest_to_announcementMainFragment);
+            }
+        });
     }
 }

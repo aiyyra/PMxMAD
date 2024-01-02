@@ -4,24 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-
-
+    android:layout_height="match_parent"
+    tools:context=".SkillsPageFragment">
 
 
 
     <TextView
         android:id="@+id/textIntroHardSkill"
-        android:layout_width="match_parent"
+        android:layout_width="343dp"
         android:layout_height="111dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
         android:text="Welcome to our Hard Skills Training section, where you'll find a wealth of valuable resources to boost your proficiency in a wide range of practical skills.\n\nDive in, learn, and watch your hard skills soar!"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -35,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textIntroHardSkill"
         app:layout_constraintStart_toStartOf="@+id/textIntroHardSkill"
         app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -48,7 +45,7 @@
         android:src="@drawable/da"
         app:layout_constraintEnd_toEndOf="@+id/pic_cp"
         app:layout_constraintTop_toBottomOf="@+id/pic_cp"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -61,7 +58,7 @@
         android:src="@drawable/pm"
         app:layout_constraintEnd_toEndOf="@+id/pic_da"
         app:layout_constraintTop_toBottomOf="@+id/pic_da"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -69,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="119dp"
         android:layout_marginTop="20dp"
+        android:contentDescription="Enter Computer Programming Section"
         android:adjustViewBounds="true"
         android:alpha=".65"
         android:clickable="true"
@@ -80,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textIntroHardSkill"
         app:layout_constraintStart_toStartOf="@+id/textIntroHardSkill"
         app:layout_constraintTop_toBottomOf="@+id/textIntroHardSkill"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -89,6 +87,7 @@
         android:layout_height="119dp"
         android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
+        android:contentDescription="Enter Data Analysis Section"
         android:alpha=".65"
         android:clickable="true"
         android:focusable="true"
@@ -99,7 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pic_cp"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -108,6 +107,7 @@
         android:layout_height="119dp"
         android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
+        android:contentDescription="Enter Project Management Section"
         android:alpha=".65"
         android:clickable="true"
         android:focusable="true"
@@ -117,7 +117,7 @@
         android:src="@drawable/red_rectangle"
         app:layout_constraintEnd_toEndOf="@+id/pic_da"
         app:layout_constraintTop_toBottomOf="@+id/pic_da"
-        app:shapeAppearanceOverlay="@style/roundimageview"
+        app:shapeAppearanceOverlay="@style/roundImageView"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -156,5 +156,19 @@
         app:layout_constraintStart_toStartOf="@+id/pic_pm"
         app:layout_constraintTop_toTopOf="@+id/pic_pm" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BtnProgress"
+        android:text="        MY PROGRESS        "
+        android:background="#ECDBBA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pic_pm"
+        android:layout_marginTop="20dp"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

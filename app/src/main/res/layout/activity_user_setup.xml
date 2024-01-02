@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".RegisterModule.Register">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="334dp"
+        android:layout_height="562dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.298">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/LoginFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_frame">
+
+            <TextView
+                android:id="@+id/TVProjectName"
+                android:layout_width="309dp"
+                android:layout_height="109dp"
+                android:background="@drawable/logo_westudy"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.194"
+                />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="User details"
+                android:textColor="@color/silver"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/TVProjectName"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="@+id/TVProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/TVProjectName" />
+
+            <EditText
+                android:id="@id/ETUsername"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="225dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/button_layout"
+                android:ems="10"
+                android:hint="Username"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:textColorHint="#ECDBBA"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/TVProjectName"
+                app:layout_constraintStart_toStartOf="@+id/TVProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+            <ProgressBar
+                android:id="@id/progressBar"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/BtnConfirmDetails"
+                android:layout_width="220dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="112dp"
+                android:backgroundTint="#C84B31"
+                android:text="Confirm"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/ETUsername"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="@+id/ETUsername"
+                app:layout_constraintTop_toBottomOf="@+id/ETUsername" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

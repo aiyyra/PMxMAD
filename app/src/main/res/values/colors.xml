@@ -6,4 +6,16 @@
     <color name="blue">#2D4263</color>
     <color name="cream">#ECDBBA</color>
     <color name="silver">#d9d9d9</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="colorPrimary">#2D4263</color>
+    <color name="colorAccent">#ECDBBA</color>
+
+    <color name="button_enabled_color">#C84B31</color>
+    <color name="button_disabled_color">#d9d9d9</color>
+
+
+
+    <color name="chat_color_sender">#1E88E5</color>
+    <color name="chat_color_receiver">#7CB342</color>
 </resources>
