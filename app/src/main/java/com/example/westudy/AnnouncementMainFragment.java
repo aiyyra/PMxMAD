@@ -2,30 +2,27 @@ package com.example.westudy;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.westudy.Adapter.AnnouncementRecyclerAdapter;
-
-import java.util.ArrayList;
+import com.example.westudy.Model.AnnouncementModel;
+import com.example.westudy.Utils.FirebaseUtil;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.Query;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AnnouncementMainFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AnnouncementMainFragment extends Fragment implements OnRemoveClickListener{
+public class AnnouncementMainFragment extends Fragment{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,8 +32,9 @@ public class AnnouncementMainFragment extends Fragment implements OnRemoveClickL
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private RecyclerView recyclerView;
-    static ArrayList<Announcement> announcementArrayList;
+
+
+
 
     public AnnouncementMainFragment() {
         // Required empty public constructor
@@ -60,6 +58,9 @@ public class AnnouncementMainFragment extends Fragment implements OnRemoveClickL
         return fragment;
     }
 
+    Button BtnNewAnnouncement;
+    AnnouncementRecyclerAdapter adapter;
+    private RecyclerView RVAnnouncement;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +75,8 @@ public class AnnouncementMainFragment extends Fragment implements OnRemoveClickL
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_announcement_main, container, false);
 
-        Button BtnNewAnnouncement = view.findViewById(R.id.BtnNewAnnouncement);
+        RVAnnouncement = view.findViewById(R.id.RVAnnouncement);
+        BtnNewAnnouncement = view.findViewById(R.id.BtnNewAnnouncement);
         BtnNewAnnouncement.setOnClickListener(v -> {
             try {
                 Navigation.findNavController(v).navigate(R.id.action_announcementMainFragment_to_announcementPostFragment);
@@ -83,44 +85,52 @@ public class AnnouncementMainFragment extends Fragment implements OnRemoveClickL
             }
         });
 
-        // Inflate the layout for this fragment
+        setupAnnouncementRecyclerView();
+
         return view;
     }
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
 
-        dataInitialize();
+     void setupAnnouncementRecyclerView(){
+         Query query = FirebaseUtil.getAllAnnouncementReference()
+                 .orderBy("announcementTimestamp", Query.Direction.DESCENDING);
 
-        recyclerView = view.findViewById(R.id.RVAnnouncement);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setHasFixedSize(true);
-        AnnouncementRecyclerAdapter adapter = new AnnouncementRecyclerAdapter(getContext(),announcementArrayList);
-        recyclerView.setAdapter(adapter);
+         FirestoreRecyclerOptions<AnnouncementModel> options = new FirestoreRecyclerOptions.Builder<AnnouncementModel>()
+                 .setQuery(query,AnnouncementModel.class).build();
 
-        // Check if the RecyclerView is empty
-        if (announcementArrayList.isEmpty()) {
-            // Create and display a Toast message as a popup
-            Toast toast = Toast.makeText(getContext(), "No announcement", Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER, 0, 0); // Set the toast message to appear in the center
-            toast.show();
+         adapter = new AnnouncementRecyclerAdapter(options, getContext());
+         LinearLayoutManager manager = new LinearLayoutManager(getContext());
+         RVAnnouncement.setLayoutManager(manager);
+         RVAnnouncement.setAdapter(adapter);
+         adapter.startListening();
+         adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+             @Override
+             public void onItemRangeInserted(int positionStart, int itemCount) {
+                 super.onItemRangeInserted(positionStart, itemCount);
+                 RVAnnouncement.smoothScrollToPosition(0);
+             }
+         });
+     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        if(adapter!=null){
+            adapter.startListening();
         }
-
-        adapter.setOnRemoveClickListener(this); // Set the remove click listener
-        adapter.notifyDataSetChanged();
     }
 
     @Override
-    public void onRemoveClick(int position) {
-        // Remove appointment at the given position from the list
-        announcementArrayList.remove(position);
-        recyclerView.getAdapter().notifyItemRemoved(position);
+    public void onStop() {
+        super.onStop();
+        if(adapter!=null){
+            adapter.stopListening();
+        }
     }
 
-    private void dataInitialize() {
-
-        // Initialize appointmentArrayList if it's not initialized
-        if (announcementArrayList == null) {
-            announcementArrayList = new ArrayList<>();
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(adapter!=null){
+            adapter.notifyDataSetChanged();
         }
     }
 }

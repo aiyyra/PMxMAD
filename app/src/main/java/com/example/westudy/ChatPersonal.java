@@ -114,9 +114,6 @@ public class ChatPersonal extends AppCompatActivity {
                         }
                     }
                 });
-
-
-
     }
 
     void getOrCreateChatroomModel(){
