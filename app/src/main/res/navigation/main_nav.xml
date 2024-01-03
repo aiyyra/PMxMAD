@@ -25,6 +25,9 @@
             android:id="@+id/action_mainPage_to_bioPage"
             app:destination="@id/bioPageDest" />
         <action
+            android:id="@+id/action_mainPage_to_geoPage"
+            app:destination="@id/geoPageDest" />
+        <action
             android:id="@+id/action_mainPage_to_skillsPage"
             app:destination="@id/skillsPageDest" />
         <action
@@ -153,4 +156,8 @@
         android:name="com.example.westudy.AnnouncementPostFragment"
         android:label="Post Announcement"
         tools:layout="@layout/fragment_announcement_post" />
+    <fragment
+        android:id="@+id/geoPageDest"
+        android:name="com.example.westudy.GeographyFragment"
+        android:label="Geography" />
 </navigation>
