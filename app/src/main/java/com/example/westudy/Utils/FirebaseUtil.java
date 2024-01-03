@@ -66,4 +66,12 @@ public class FirebaseUtil {
         return FirebaseStorage.getInstance().getReference().child("profile_pic")
                 .child(otherUserId);
     }
+
+    public static String getAnnouncementID(String userId1,String time){
+        return userId1+"_"+Timestamp.now().toString();
+    }
+
+    public static CollectionReference getAllAnnouncementReference(){
+        return FirebaseFirestore.getInstance().collection("announcements");
+    }
 }

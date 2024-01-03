@@ -14,7 +14,11 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.westudy.Model.AnnouncementModel;
+import com.example.westudy.Utils.FirebaseUtil;
 import com.google.common.reflect.TypeToken;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
@@ -61,6 +65,9 @@ public class AnnouncementPostFragment extends Fragment {
         return fragment;
     }
 
+    String message;
+    AnnouncementModel announcementModel;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,8 +82,6 @@ public class AnnouncementPostFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        AndroidThreeTen.init(getContext());
-
         View view = inflater.inflate(R.layout.fragment_announcement_post, container, false);
 
         //declare message content
@@ -84,26 +89,9 @@ public class AnnouncementPostFragment extends Fragment {
 
         Button BtnPostAnnouncement = view.findViewById(R.id.BtnPostAnnouncement);
         BtnPostAnnouncement.setOnClickListener(v -> {
-            String message = ETAnnouncementPost.getText().toString();
+            message = ETAnnouncementPost.getText().toString();
 
-            // Get the current date and time
-            LocalDateTime currentDateTime = LocalDateTime.now();
-
-            // Format the date
-            String formattedDate = currentDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-
-            // Format the time
-            String formattedTime = currentDateTime.format(DateTimeFormatter.ofPattern("hh:mm a"));
-
-            // Concatenate the date and time with a newline character
-            String formattedDateTime = formattedDate + "\n" + formattedTime;
-
-            // Create an Announcement object with the obtained data
-            Announcement announcement = new Announcement(formattedDateTime, message);
-            AnnouncementMainFragment.announcementArrayList.add(announcement);
-
-            // Save appointment data to SharedPreferences
-            saveAnnouncement(announcement);
+            saveAnnouncementToDB();
 
             Navigation.findNavController(v).popBackStack();
         });
@@ -111,27 +99,9 @@ public class AnnouncementPostFragment extends Fragment {
         return view;
     }
 
-    private void saveAnnouncement(Announcement announcement){
-        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("Announcements", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        // Get existing appointments from SharedPreferences
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("announcements", "");
-        ArrayList<Announcement> announcementList;
-        if (json.isEmpty()) {
-            announcementList = new ArrayList<>();
-        } else {
-            Type type = new TypeToken<ArrayList<Announcement>>() {}.getType();
-            announcementList = gson.fromJson(json, type);
-        }
-
-        // Add new announcement
-        announcementList.add(announcement);
-
-        // Save updated announcement SharedPreferences
-        String updatedJson = gson.toJson(announcementList);
-        editor.putString("announcements", updatedJson);
-        editor.apply();
+    public void saveAnnouncementToDB(){
+        String announcementId = FirebaseUtil.getAnnouncementID(FirebaseUtil.currentUserID(),FirebaseUtil.timestampToString(Timestamp.now()));
+        announcementModel = new AnnouncementModel(announcementId,message,Timestamp.now());
+        FirebaseFirestore.getInstance().collection("announcements").document(announcementId).set(announcementModel);
     }
 }
