@@ -12,11 +12,6 @@ public class UserModel {
 
     public UserModel() {
     }
-//    public UserModel(String email, Timestamp createdTimeStamp,String userID) {
-//        this.email = email;
-//        this.createdTimeStamp = createdTimeStamp;
-//        this.userID = userID;
-//    }
 
     public UserModel(String username, String email, String userID, Timestamp createdTimeStamp) {
         this.username = username;

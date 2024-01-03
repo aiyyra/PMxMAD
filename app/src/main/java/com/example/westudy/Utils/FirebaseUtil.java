@@ -5,6 +5,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -53,5 +55,23 @@ public class FirebaseUtil {
 
     public static String timestampToString(Timestamp timestamp){
         return new SimpleDateFormat("HH:MM").format(timestamp.toDate());
+    }
+
+    public static StorageReference getCurrentProfilePicStorageReference(){
+        return FirebaseStorage.getInstance().getReference().child("profile_pic")
+                .child(FirebaseUtil.currentUserID());
+    }
+
+    public static StorageReference getOtherUserProfilePicStorageReference(String otherUserId){
+        return FirebaseStorage.getInstance().getReference().child("profile_pic")
+                .child(otherUserId);
+    }
+
+    public static String getAnnouncementID(String userId1,String time){
+        return userId1+"_"+Timestamp.now().toString();
+    }
+
+    public static CollectionReference getAllAnnouncementReference(){
+        return FirebaseFirestore.getInstance().collection("announcements");
     }
 }
