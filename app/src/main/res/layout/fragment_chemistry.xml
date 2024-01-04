@@ -1,15 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ChemistryFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Chem Page"
-        android:textSize="35sp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnC1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:background="#C84B31"
+        android:text="Redox Reaction"
+        android:textColor="#ffffff"
         />
 
-</LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnC2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnC1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:background="#C84B31"
+        android:text="Electrochemistry"
+        android:textColor="#ffffff"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnC3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnC2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:background="#C84B31"
+        android:text="Periodic Table"
+        android:textColor="#ffffff"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnC4"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnC3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:background="#C84B31"
+        android:text="Chemical Bonding"
+        android:textColor="#ffffff"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnC5"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnC4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:background="#C84B31"
+        android:text="Atomic Structure"
+        android:textColor="#ffffff"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

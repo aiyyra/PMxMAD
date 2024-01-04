@@ -25,6 +25,9 @@
             android:id="@+id/action_mainPage_to_bioPage"
             app:destination="@id/bioPageDest" />
         <action
+            android:id="@+id/action_mainPage_to_geoPage"
+            app:destination="@id/geoPageDest" />
+        <action
             android:id="@+id/action_mainPage_to_skillsPage"
             app:destination="@id/skillsPageDest" />
         <action
@@ -67,27 +70,108 @@
         android:id="@+id/chemPageDest"
         android:name="com.example.westudy.ChemistryFragment"
         android:label="Chemistry"
-        tools:layout="@layout/fragment_chemistry" />
+        tools:layout="@layout/fragment_chemistry" >
+        <action
+            android:id="@+id/action_chemPage_to_chemC1Page"
+            app:destination="@id/chemC1PageDest"/>
+        <action
+            android:id="@+id/action_chemPage_to_chemC2Page"
+            app:destination="@id/chemC2PageDest"/>
+        <action
+            android:id="@+id/action_chemPage_to_chemC3Page"
+            app:destination="@id/chemC3PageDest"/>
+        <action
+            android:id="@+id/action_chemPage_to_chemC4Page"
+            app:destination="@id/chemC4PageDest"/>
+        <action
+            android:id="@+id/action_chemPage_to_chemC5Page"
+            app:destination="@id/chemC5PageDest"/>
+
+    </fragment>
     <fragment
         android:id="@+id/engPageDest"
         android:name="com.example.westudy.EnglishFragment"
         android:label="English"
-        tools:layout="@layout/fragment_english" />
+        tools:layout="@layout/fragment_english" >
+        <action
+            android:id="@+id/action_engPage_to_engC1Page"
+            app:destination="@id/engC1PageDest"/>
+        <action
+            android:id="@+id/action_engPage_to_engC2Page"
+            app:destination="@id/engC2PageDest"/>
+        <action
+            android:id="@+id/action_engPage_to_engC3Page"
+            app:destination="@id/engC3PageDest"/>
+        <action
+            android:id="@+id/action_engPage_to_engC4Page"
+            app:destination="@id/engC4PageDest"/>
+        <action
+            android:id="@+id/action_engPage_to_engC5Page"
+            app:destination="@id/engC5PageDest"/>
+    </fragment>
     <fragment
         android:id="@+id/phyPageDest"
         android:name="com.example.westudy.PhysicsFragment"
         android:label="Physics"
-        tools:layout="@layout/fragment_physics" />
+        tools:layout="@layout/fragment_physics" >
+        <action
+            android:id="@+id/action_phyPage_to_phyC1Page"
+            app:destination="@id/phyC1PageDest"/>
+        <action
+            android:id="@+id/action_phyPage_to_phyC2Page"
+            app:destination="@id/phyC2PageDest"/>
+        <action
+            android:id="@+id/action_phyPage_to_phyC3Page"
+            app:destination="@id/phyC3PageDest"/>
+        <action
+            android:id="@+id/action_phyPage_to_phyC4Page"
+            app:destination="@id/phyC4PageDest"/>
+        <action
+            android:id="@+id/action_phyPage_to_phyC5Page"
+            app:destination="@id/phyC5PageDest"/>
+    </fragment>
     <fragment
         android:id="@+id/mathPageDest"
         android:name="com.example.westudy.MathsFragment"
         android:label="Maths"
-        tools:layout="@layout/fragment_maths" />
+        tools:layout="@layout/fragment_maths" >
+        <action
+            android:id="@+id/action_mathsPage_to_mathsC1Page"
+            app:destination="@id/mathsC1PageDest"/>
+        <action
+            android:id="@+id/action_mathsPage_to_mathsC2Page"
+            app:destination="@id/mathsC2PageDest"/>
+        <action
+            android:id="@+id/action_mathsPage_to_mathsC3Page"
+            app:destination="@id/mathsC3PageDest"/>
+        <action
+            android:id="@+id/action_mathsPage_to_mathsC4Page"
+            app:destination="@id/mathsC4PageDest"/>
+        <action
+            android:id="@+id/action_mathsPage_to_mathsC5Page"
+            app:destination="@id/mathsC5PageDest"/>
+    </fragment>
     <fragment
         android:id="@+id/bioPageDest"
         android:name="com.example.westudy.BiologyFragment"
         android:label="Biology"
-        tools:layout="@layout/fragment_biology" />
+        tools:layout="@layout/fragment_biology" >
+        <action
+            android:id="@+id/action_bioPage_to_bioC1Page"
+            app:destination="@id/bioC1PageDest"/>
+        <action
+            android:id="@+id/action_bioPage_to_bioC2Page"
+            app:destination="@id/bioC2PageDest"/>
+        <action
+            android:id="@+id/action_bioPage_to_bioC3Page"
+            app:destination="@id/bioC3PageDest"/>
+        <action
+            android:id="@+id/action_bioPage_to_bioC4Page"
+            app:destination="@id/bioC4PageDest"/>
+        <action
+            android:id="@+id/action_bioPage_to_bioC5Page"
+            app:destination="@id/bioC5PageDest"/>
+    </fragment>
     <fragment
         android:id="@+id/CPPageDest"
         android:name="com.example.westudy.skills_CP_Fragment"
@@ -153,4 +237,174 @@
         android:name="com.example.westudy.AnnouncementPostFragment"
         android:label="Post Announcement"
         tools:layout="@layout/fragment_announcement_post" />
+    <fragment
+        android:id="@+id/geoPageDest"
+        android:name="com.example.westudy.GeographyFragment"
+        android:label="Geography" >
+        <action
+            android:id="@+id/action_geoPage_to_geoC1Page"
+            app:destination="@id/geoC1PageDest"/>
+        <action
+            android:id="@+id/action_geoPage_to_geoC2Page"
+            app:destination="@id/geoC2PageDest"/>
+        <action
+            android:id="@+id/action_geoPage_to_geoC3Page"
+            app:destination="@id/geoC3PageDest"/>
+        <action
+            android:id="@+id/action_geoPage_to_geoC4Page"
+            app:destination="@id/geoC4PageDest"/>
+        <action
+            android:id="@+id/action_geoPage_to_geoC5Page"
+            app:destination="@id/geoC5PageDest"/>
+    </fragment>
+    <fragment
+        android:id="@+id/chemC1PageDest"
+        android:name="com.example.westudy.ChemistryChapter1Fragment"
+        android:label="Redox Reaction"
+        tools:layout="@layout/fragment_chem_c1" />
+    <fragment
+        android:id="@+id/chemC2PageDest"
+        android:name="com.example.westudy.ChemistryChapter2Fragment"
+        android:label="Electrochemistry"
+        tools:layout="@layout/fragment_chem_c2" />
+    <fragment
+        android:id="@+id/chemC3PageDest"
+        android:name="com.example.westudy.ChemistryChapter3Fragment"
+        android:label="Periodic Table"
+        tools:layout="@layout/fragment_chem_c3" />
+    <fragment
+        android:id="@+id/chemC4PageDest"
+        android:name="com.example.westudy.ChemistryChapter4Fragment"
+        android:label="Chemical Bonding"
+        tools:layout="@layout/fragment_chem_c4" />
+    <fragment
+        android:id="@+id/chemC5PageDest"
+        android:name="com.example.westudy.ChemistryChapter5Fragment"
+        android:label="Atomic Structure"
+        tools:layout="@layout/fragment_chem_c5" />
+    <fragment
+        android:id="@+id/bioC1PageDest"
+        android:name="com.example.westudy.BiologyChapter1Fragment"
+        android:label="Cell"
+        tools:layout="@layout/fragment_bio_c1" />
+    <fragment
+        android:id="@+id/bioC2PageDest"
+        android:name="com.example.westudy.BiologyChapter2Fragment"
+        android:label="Genetics"
+        tools:layout="@layout/fragment_bio_c2" />
+    <fragment
+        android:id="@+id/bioC3PageDest"
+        android:name="com.example.westudy.BiologyChapter3Fragment"
+        android:label="Ecology"
+        tools:layout="@layout/fragment_bio_c3" />
+    <fragment
+        android:id="@+id/bioC4PageDest"
+        android:name="com.example.westudy.BiologyChapter4Fragment"
+        android:label="Anatomy"
+        tools:layout="@layout/fragment_bio_c4" />
+    <fragment
+        android:id="@+id/bioC5PageDest"
+        android:name="com.example.westudy.BiologyChapter5Fragment"
+        android:label="Immunology"
+        tools:layout="@layout/fragment_bio_c5" />
+    <fragment
+        android:id="@+id/engC1PageDest"
+        android:name="com.example.westudy.EnglishChapter1Fragment"
+        android:label="Conjunctions"
+        tools:layout="@layout/fragment_eng_c1" />
+    <fragment
+        android:id="@+id/engC2PageDest"
+        android:name="com.example.westudy.EnglishChapter2Fragment"
+        android:label="Prepositions"
+        tools:layout="@layout/fragment_eng_c2" />
+    <fragment
+        android:id="@+id/engC3PageDest"
+        android:name="com.example.westudy.EnglishChapter3Fragment"
+        android:label="Adverbs"
+        tools:layout="@layout/fragment_eng_c3" />
+    <fragment
+        android:id="@+id/engC4PageDest"
+        android:name="com.example.westudy.EnglishChapter4Fragment"
+        android:label="Pronouns"
+        tools:layout="@layout/fragment_eng_c4" />
+    <fragment
+        android:id="@+id/engC5PageDest"
+        android:name="com.example.westudy.EnglishChapter5Fragment"
+        android:label="Adjectives"
+        tools:layout="@layout/fragment_eng_c5" />
+    <fragment
+        android:id="@+id/geoC1PageDest"
+        android:name="com.example.westudy.GeographyChapter1Fragment"
+        android:label="Physical Geography"
+        tools:layout="@layout/fragment_geo_c1" />
+    <fragment
+        android:id="@+id/geoC2PageDest"
+        android:name="com.example.westudy.GeographyChapter2Fragment"
+        android:label="Human Geography"
+        tools:layout="@layout/fragment_geo_c2" />
+    <fragment
+        android:id="@+id/geoC3PageDest"
+        android:name="com.example.westudy.GeographyChapter3Fragment"
+        android:label="Geopolitics"
+        tools:layout="@layout/fragment_geo_c3" />
+    <fragment
+        android:id="@+id/geoC4PageDest"
+        android:name="com.example.westudy.GeographyChapter4Fragment"
+        android:label="Cartography"
+        tools:layout="@layout/fragment_geo_c4" />
+    <fragment
+        android:id="@+id/geoC5PageDest"
+        android:name="com.example.westudy.GeographyChapter5Fragment"
+        android:label="Urban Geography"
+        tools:layout="@layout/fragment_geo_c5" />
+    <fragment
+        android:id="@+id/mathsC1PageDest"
+        android:name="com.example.westudy.MathsChapter1Fragment"
+        android:label="Algebra"
+        tools:layout="@layout/fragment_maths_c1" />
+    <fragment
+        android:id="@+id/mathsC2PageDest"
+        android:name="com.example.westudy.MathsChapter2Fragment"
+        android:label="Plane Geometry"
+        tools:layout="@layout/fragment_maths_c2" />
+    <fragment
+        android:id="@+id/mathsC3PageDest"
+        android:name="com.example.westudy.MathsChapter3Fragment"
+        android:label="Trigonometry"
+        tools:layout="@layout/fragment_maths_c3" />
+    <fragment
+        android:id="@+id/mathsC4PageDest"
+        android:name="com.example.westudy.MathsChapter4Fragment"
+        android:label="Probability"
+        tools:layout="@layout/fragment_maths_c4" />
+    <fragment
+        android:id="@+id/mathsC5PageDest"
+        android:name="com.example.westudy.MathsChapter5Fragment"
+        android:label="Matrices"
+        tools:layout="@layout/fragment_maths_c5" />
+    <fragment
+        android:id="@+id/phyC1PageDest"
+        android:name="com.example.westudy.PhysicsChapter1Fragment"
+        android:label="Electromagnetism"
+        tools:layout="@layout/fragment_phy_c1" />
+    <fragment
+        android:id="@+id/phyC2PageDest"
+        android:name="com.example.westudy.PhysicsChapter2Fragment"
+        android:label="Momentum and Impulse"
+        tools:layout="@layout/fragment_phy_c2" />
+    <fragment
+        android:id="@+id/phyC3PageDest"
+        android:name="com.example.westudy.PhysicsChapter3Fragment"
+        android:label="Circular Motion"
+        tools:layout="@layout/fragment_phy_c3" />
+    <fragment
+        android:id="@+id/phyC4PageDest"
+        android:name="com.example.westudy.PhysicsChapter4Fragment"
+        android:label="Waves and Optics"
+        tools:layout="@layout/fragment_phy_c4" />
+    <fragment
+        android:id="@+id/phyC5PageDest"
+        android:name="com.example.westudy.PhysicsChapter5Fragment"
+        android:label="Thermodynamics"
+        tools:layout="@layout/fragment_phy_c5" />
 </navigation>

@@ -1,18 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Westudy" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/blue</item>
-        <!-- for back arrow navigation color -->
-        <item name="colorControlNormal">@color/white</item>
-
-        <!-- Text appearance customization -->
-        <item name="textAppearanceHeadline1">@style/TextAppearanceToolbar</item>
-        <!-- Add more text appearance attributes as needed -->
-    </style>
-    <style name="Base.Theme.Westudy." parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <!-- Define toolbar text appearances -->

@@ -67,7 +67,7 @@ public class MainPageFragment extends Fragment {
     }
     Button viewSkills,viewCourse,viewAnnouncement;
     TextView TVSkillsTitle, TVAnnouncementTitle;
-    ImageButton iBtnChem,iBtnEng,iBtnPhy,iBtnMath,iBtnBio;
+    ImageButton iBtnChem,iBtnEng,iBtnPhy,iBtnMath,iBtnBio,iBtnGeo;
     ImageButton iBtnCP,iBtnDA,iBtnPM;
     TextView viewAllSkills;
     @Override
@@ -81,7 +81,7 @@ public class MainPageFragment extends Fragment {
     public  void initializeView(View view){
         iBtnChem = view.findViewById(R.id.iBtnChem);
         iBtnEng = view.findViewById(R.id.iBtnEng);
-
+        iBtnGeo = view.findViewById(R.id.iBtnGeo);
         iBtnPhy = view.findViewById(R.id.iBtnPhy);
         iBtnMath = view.findViewById(R.id.iBtnMath);
         iBtnBio = view.findViewById(R.id.iBtnBio);
@@ -126,6 +126,12 @@ public class MainPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_mainPage_to_bioPage);
+            }
+        });
+        iBtnGeo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mainPage_to_geoPage);
             }
         });
         ///////////////////////
