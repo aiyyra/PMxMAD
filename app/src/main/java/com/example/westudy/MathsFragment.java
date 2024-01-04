@@ -2,63 +2,76 @@ package com.example.westudy;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MathsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MathsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    AppCompatButton btnC1,btnC2,btnC3,btnC4,btnC5;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public MathsFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MathsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MathsFragment newInstance(String param1, String param2) {
-        MathsFragment fragment = new MathsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_maths, container, false);
+        View view = inflater.inflate(R.layout.fragment_maths, container, false);
+
+        btnC1 = view.findViewById(R.id.btnC1);
+        btnC2 = view.findViewById(R.id.btnC2);
+        btnC3 = view.findViewById(R.id.btnC3);
+        btnC4 = view.findViewById(R.id.btnC4);
+        btnC5 = view.findViewById(R.id.btnC5);
+
+        btnC1.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mathsPage_to_mathsC1Page);
+            }
+        });
+
+        btnC2.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mathsPage_to_mathsC2Page);
+            }
+        });
+
+        btnC3.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mathsPage_to_mathsC3Page);
+            }
+        });
+
+        btnC4.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mathsPage_to_mathsC4Page);
+            }
+        });
+
+        btnC5.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_mathsPage_to_mathsC5Page);
+            }
+        });
+
+        return view;
     }
 }

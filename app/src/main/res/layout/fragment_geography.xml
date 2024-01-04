@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="30dp"
         android:background="#C84B31"
-        android:text="Conjunctions"
+        android:text="Physical Geography"
         android:textColor="#ffffff"
         />
 
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp"
         android:background="#C84B31"
-        android:text="Prepositions"
+        android:text="Human Geography"
         android:textColor="#ffffff"
         />
 
@@ -41,7 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp"
         android:background="#C84B31"
-        android:text="Adverbs"
+        android:text="Geopolitics"
         android:textColor="#ffffff"
         />
 
@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp"
         android:background="#C84B31"
-        android:text="Pronouns"
+        android:text="Cartography"
         android:textColor="#ffffff"
         />
 
@@ -67,7 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp"
         android:background="#C84B31"
-        android:text="Adjectives"
+        android:text="Urban Geography"
         android:textColor="#ffffff"
         />
 

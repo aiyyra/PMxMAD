@@ -3,6 +3,8 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+
+
 android {
     namespace = "com.example.westudy"
     compileSdk = 34
@@ -56,4 +58,5 @@ dependencies {
     implementation ("com.jakewharton.threetenabp:threetenabp:1.3.0") // Use the latest version
     implementation ("com.github.dhaval2404:imagepicker:2.1")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("com.github.barteksc:android-pdf-viewer:3.1.0-beta.1")
 }

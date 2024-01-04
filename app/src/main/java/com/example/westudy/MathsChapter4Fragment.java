@@ -33,14 +33,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public class ChemistryChapter1Fragment extends Fragment {
+public class MathsChapter4Fragment extends Fragment {
 
     PDFView pdf1;
     AppCompatButton btnDownload1;
     private static final int PERMISSION_STORAGE_CODE = 1000;
-    String urlC1 = "https://unacademy.com/content/wp-content/uploads/sites/2/2022/10/Redox-Reaction-Notes.pdf";
+    String urlC1 = "https://ncert.nic.in/pdf/publication/exemplarproblem/classXII/mathematics/leep213.pdf";
 
-    public ChemistryChapter1Fragment() {
+    public MathsChapter4Fragment() {
         // Required empty public constructor
     }
 
@@ -52,7 +52,7 @@ public class ChemistryChapter1Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_chem_c1, container, false);
 
         pdf1 = view.findViewById(R.id.pdf1);
-        new ChemistryChapter1Fragment.RetrievePDF().execute(urlC1);
+        new MathsChapter4Fragment.RetrievePDF().execute(urlC1);
 
         btnDownload1 = view.findViewById(R.id.btnDownload1);
         btnDownload1.setOnClickListener(new View.OnClickListener(){
