@@ -8,9 +8,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RVAnnouncement"
-        android:layout_width="match_parent"
-        android:layout_height="650dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="0dp"
+        android:layout_height="638dp"
+        android:layout_marginTop="50dp"
         android:padding="@dimen/big_padding"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"

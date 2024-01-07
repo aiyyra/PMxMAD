@@ -15,7 +15,7 @@
         android:text="Date:"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,7 +60,7 @@
         android:fontFamily="@font/inter_medium"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toEndOf="@+id/TitleDate"
         app:layout_constraintTop_toTopOf="@+id/TitleDate" />
 
@@ -112,8 +112,10 @@
         android:layout_width="409dp"
         android:layout_height="1dp"
         android:layout_marginTop="27dp"
+        android:layout_marginBottom="16dp"
         android:background="?android:attr/listDivider"
         android:fontFamily="sans-serif-condensed-medium"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TVMessageContent" />
@@ -123,8 +125,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/inter_medium"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/TVTeacherContent"
         app:layout_constraintTop_toBottomOf="@+id/TVTeacherContent" />
 
