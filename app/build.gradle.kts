@@ -58,5 +58,7 @@ dependencies {
     implementation ("com.jakewharton.threetenabp:threetenabp:1.3.0") // Use the latest version
     implementation ("com.github.dhaval2404:imagepicker:2.1")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
-    implementation ("com.github.barteksc:android-pdf-viewer:3.1.0-beta.1")
+    implementation ("com.github.barteksc:android-pdf-viewer:3.2.0-beta.1")
+    implementation ("com.github.barteksc:android-pdf-viewer:2.8.2")
+
 }
