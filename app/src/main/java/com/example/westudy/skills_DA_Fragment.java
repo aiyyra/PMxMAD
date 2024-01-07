@@ -45,25 +45,25 @@ public class skills_DA_Fragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_skills__d_a_, container, false);
 
-        WebView cp_vid1 = view.findViewById(R.id.cp_vid1);
+        WebView cp_vid1 = view.findViewById(R.id.da_vid1);
         String cpvid1 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/lgCNTuLBMK4?si=4JEeLUSo4ciD5v9D\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
         cp_vid1.loadData(cpvid1,"text/html", "utf-8");
         cp_vid1.getSettings().setJavaScriptEnabled(true);
         cp_vid1.setWebChromeClient(new WebChromeClient());
 
-        WebView cp_vid2 = view.findViewById(R.id.cp_vid2);
+        WebView cp_vid2 = view.findViewById(R.id.da_vid2);
         String cpvid2 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/qWEHO8b6WbA?si=zOsyHNPtZPYFZ3Va\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
         cp_vid2.loadData(cpvid2,"text/html", "utf-8");
         cp_vid2.getSettings().setJavaScriptEnabled(true);
         cp_vid2.setWebChromeClient(new WebChromeClient());
 
-        WebView cp_vid3 = view.findViewById(R.id.cp_vid3);
+        WebView cp_vid3 = view.findViewById(R.id.da_vid3);
         String cpvid3 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/GLneLGYZgnA?si=8wmp3B4gDzLYyorW\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
         cp_vid3.loadData(cpvid3,"text/html", "utf-8");
         cp_vid3.getSettings().setJavaScriptEnabled(true);
         cp_vid3.setWebChromeClient(new WebChromeClient());
 
-        WebView cp_vid4 = view.findViewById(R.id.cp_vid4);
+        WebView cp_vid4 = view.findViewById(R.id.da_vid4);
         String cpvid4 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/r-uOLxNrNk8?si=Y8RugwqS2S2Cyxk8\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>";
         cp_vid4.loadData(cpvid4,"text/html", "utf-8");
         cp_vid4.getSettings().setJavaScriptEnabled(true);
