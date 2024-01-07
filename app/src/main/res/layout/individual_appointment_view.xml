@@ -120,7 +120,7 @@
 
     <TextView
         android:id="@+id/TVMessageContent"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
         android:fontFamily="@font/inter_medium"
