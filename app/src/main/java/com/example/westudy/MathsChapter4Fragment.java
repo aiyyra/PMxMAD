@@ -1,11 +1,16 @@
 package com.example.westudy;
 
 //import static androidx.core.app.AppOpsManagerCompat.Api23Impl.getSystemService;
+import static android.app.Activity.RESULT_OK;
 import static androidx.core.content.PermissionChecker.checkSelfPermission;
 
+import android.annotation.SuppressLint;
 import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,20 +18,33 @@ import android.os.Bundle;
 import android.Manifest;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.PermissionChecker;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
+import android.provider.OpenableColumns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.westudy.Model.FileinModel;
 import com.github.barteksc.pdfviewer.PDFView;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -39,6 +57,10 @@ public class MathsChapter4Fragment extends Fragment {
     AppCompatButton btnDownload1;
     private static final int PERMISSION_STORAGE_CODE = 1000;
     String urlC1 = "https://ncert.nic.in/pdf/publication/exemplarproblem/classXII/mathematics/leep213.pdf";
+    AppCompatButton btnUpload;
+    EditText edit;
+    StorageReference storangeReference;
+    DatabaseReference databaseReference;
 
     public MathsChapter4Fragment() {
         // Required empty public constructor
@@ -49,12 +71,26 @@ public class MathsChapter4Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_chem_c1, container, false);
+        View view = inflater.inflate(R.layout.fragment_maths_c4, container, false);
 
         pdf1 = view.findViewById(R.id.pdf1);
         new MathsChapter4Fragment.RetrievePDF().execute(urlC1);
 
         btnDownload1 = view.findViewById(R.id.btnDownload1);
+        btnUpload = view.findViewById(R.id.btnUpload);
+        edit = view.findViewById(R.id.etSubmit);
+        storangeReference = FirebaseStorage.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference("work");
+        btnUpload.setEnabled(false);
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectPdf();
+            }
+
+
+        });
         btnDownload1.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -70,6 +106,79 @@ public class MathsChapter4Fragment extends Fragment {
         });
 
         return view;
+    }
+
+    public void retrivePdfs(View view){
+        //later lol
+    }
+    private void uploadPDF(Uri data){
+        final ProgressDialog pd = new ProgressDialog(requireContext());
+        pd.setTitle("File uploading...");
+        pd.show();
+        final StorageReference reference = storangeReference.child("uploads/maths/probability/" + System.currentTimeMillis() + ".pdf");
+        reference.putFile(data)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                        while(!uriTask.isComplete());
+                        Uri uri = uriTask.getResult();
+
+                        FileinModel fileinModel = new FileinModel(edit.getText().toString(),uri.toString());
+                        databaseReference.child(databaseReference.push().getKey()).setValue(fileinModel);
+                        Toast.makeText(requireContext(),"File Uploaded Successfully!",Toast.LENGTH_SHORT).show();
+                        pd.dismiss();
+                    }
+                }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                        float percent = (100 * snapshot.getBytesTransferred()) / snapshot.getTotalByteCount();
+                        pd.setMessage("Uploaded: " + (int) percent + "%");
+
+                    }
+                });
+    }
+
+    private void selectPdf() {
+        Intent intent = new Intent();
+        intent.setType("application/pdf");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select PDF files"),101);
+    }
+
+    @SuppressLint("Range")
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==101 && resultCode==RESULT_OK && data!=null && data.getData()!=null){
+            Uri uri = data.getData();
+            String uriString = uri.toString();
+            File myFile = new File(uriString);
+            String path = myFile.getAbsolutePath();
+            String displayName = null;
+
+            if(uriString.startsWith("content://")){
+                Cursor cursor = null;
+                try{
+                    cursor = requireActivity().getContentResolver().query(uri,null,null,null,null);
+                    if(cursor!=null && cursor.moveToFirst()){
+                        displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                    }
+                } finally{
+                    cursor.close();
+                }
+            }else if(uriString.startsWith("file://")){
+                displayName = myFile.getName();
+            }
+            btnUpload.setEnabled(true);
+            edit.setText(displayName);
+            btnUpload.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    uploadPDF(data.getData());
+                }
+            });
+        }
     }
 
     class RetrievePDF extends AsyncTask<String,Void, InputStream>{
@@ -117,6 +226,8 @@ public class MathsChapter4Fragment extends Fragment {
             case PERMISSION_STORAGE_CODE:{
                 if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_DENIED){
                     startDownloading(urlC1);
+                    Toast.makeText(requireContext(),"Start Downloading...",Toast.LENGTH_SHORT).show();
+
                 }else{
                     Toast.makeText(requireContext(),"Permission denied",Toast.LENGTH_SHORT).show();
                 }
