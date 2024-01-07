@@ -2,11 +2,11 @@ package com.example.westudy;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import android.view.Gravity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +15,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-//import com.example.westudy.Adapter.AppointmentRecyclerAdapter;
+import com.example.westudy.Adapter.AppointmentRecyclerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -98,8 +98,8 @@ public class AppointmentMainFragment extends Fragment implements OnRemoveClickLi
         recyclerView = view.findViewById(R.id.RVAppointment);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
-//        AppointmentRecyclerAdapter adapter = new AppointmentRecyclerAdapter(getContext(),appointmentArrayList);
-//        recyclerView.setAdapter(adapter);
+        AppointmentRecyclerAdapter adapter = new AppointmentRecyclerAdapter(getContext(),appointmentArrayList);
+        recyclerView.setAdapter(adapter);
 
         // Check if the RecyclerView is empty
         if (AppointmentMainFragment.appointmentArrayList.isEmpty()) {
@@ -109,8 +109,8 @@ public class AppointmentMainFragment extends Fragment implements OnRemoveClickLi
             toast.show();
         }
 
-//        adapter.setOnRemoveClickListener(this); // Set the remove click listener
-//        adapter.notifyDataSetChanged();
+        adapter.setOnRemoveClickListener(this); // Set the remove click listener
+        adapter.notifyDataSetChanged();
     }
 
     @Override
